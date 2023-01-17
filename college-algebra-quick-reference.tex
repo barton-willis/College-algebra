@@ -39,7 +39,7 @@
 \newcommand{\glb}{\mathrm{glb}}
 \newcommand{\lub}{\mathrm{lub}}
 \newcommand{\length}{\mathrm{length}}
-\newcommand{\euler}{\mathrm{euler}}
+\newcommand{\euler}{\mathrm{e}}
 \usepackage{mathtools}
 \DeclarePairedDelimiter{\parens}{\lparen}{\rparen}
 \usepackage{amsmath,amssymb,textcomp}
@@ -194,17 +194,19 @@
 
 
 
-\section*{Arithmetic properties}
+\section*{Arithmetic properties of \(\reals\)}
 \begin{alignat*}{2}
     &\parens*{\forall a,b\in \reals} \parens*{a + b = b + a} & \mbox{commutivity}\\
-    &\parens*{\forall a,b,c\in \reals} \parens*{a + (b + c)  = (a+b)+c} & \mbox{commutivity}\\
+    &\parens*{\forall a,b,c\in \reals} \parens*{a + (b + c)  = (a+b)+c} & \mbox{associative}\\
     &\parens*{\forall a,b \in \reals} \parens*{a  b = b a} & \mbox{commutivity}\\
-    &\parens*{\forall a,b,c \in \reals} \parens*{a  (b c) = (a b) c} & \mbox{commutivity}\\
+    &\parens*{\forall a,b,c \in \reals} \parens*{a  (b c) = (a b) c} & \mbox{associative}\\
     &\parens*{\forall a,b,c \in \reals} \parens*{a (b+c) =a b + a c} & \mbox{distributive}\\
 \end{alignat*}
 
 
 \section*{Distance \& Midpoint}
+\vspace{-0.15in}
+\begin{minipage}[c]{0.3333333333333\textwidth}
 The distance between the points \((x_1,y_1)\) and  \((x_2,y_2)\) is
 \[
   \sqrt{(x_1-x_2)^2 + (y_1-y_2)^2}.
@@ -213,10 +215,11 @@ The midpoint is the point
 \[
 \left(\frac{x_1+x_2}{2}, \frac{y_1+y_2}{2} \right).
 \]
+\end{minipage}
 
 \section*{Exponents}
 \vspace{-0.15in}
-\begin{minipage}[c]{2.0in}
+\begin{minipage}[c]{0.3333333333333\textwidth}
 %\vspace{-0.25in}
 For \(a,b > 0\) and \(m,n\) real:
 \begin{alignat*}{1}
@@ -227,6 +230,29 @@ For \(a,b > 0\) and \(m,n\) real:
 \end{alignat*}
 \end{minipage}
 
+\section*{Radicals}
+\begin{minipage}[c]{0.3333333333333\textwidth}
+\begin{alignat*}{1}
+&\sqrt[n]{a} = a^{1/n} \\
+&\sqrt[n]{ab} = \sqrt[n]{a} \sqrt[n]{b}  \quad (\mbox{provided } a,b \geq 0) \\
+&\sqrt[m]{\sqrt[n]{a}} = \sqrt[mn]{a} \\
+&\sqrt[n]{\frac{a}{b}} = \frac{\sqrt[n]{a}}{\sqrt[n]{b}} \\
+&\sqrt[n]{a^n} = \begin{cases} a & n \mbox{ odd} \\  |a| &  n \mbox{ even} \end{cases}
+\end{alignat*}
+\end{minipage}
+
+\section*{Identities}
+\begin{minipage}[c]{0.3333333333333\textwidth}
+\begin{alignat*}{2}
+   &a  \parens*{b + c} = a b + a c \\
+   &\parens*{\parens{a +b}  \parens*{c + d}} = a c + a d + b c + bd \\
+   &\frac{a b + ac}{a} = b + c  \quad (\mbox{provided } a \neq 0) \\
+   &\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{ad}{b c}  \quad (\mbox{provided } b,d \neq 0) \\
+   &\sqrt{a b} = \sqrt{a}\sqrt{b}  \quad (\mbox{provided } a \geq 0, b \geq 0 ) \\
+   &\ln(ab) = \ln(a) + \ln(b) \quad (\mbox{provided } a \geq 0, b \geq 0 ) \\
+\end{alignat*}
+\end{minipage}
+\vfill 
 \section*{Solution of Equations}
 \vspace{-0.2in}
 \subsubsection*{Algebraic}
@@ -249,11 +275,11 @@ For \(a,b > 0\) and \(m,n\) real:
 & \big [\ln(a) = 0 \big] \equiv \big [a =  1\big] \\
 & \big [\euler^a = 1 \big] \equiv \big [a = 0 \big] \\
 & \big [\ln(a) = b \big] \equiv \big [a = \euler^b \big] \\
-& \big [\ln(a) = b \big] \equiv \big [a = \euler^b \big] 
 \end{align*}
 \end{minipage}
 
 \section*{Parabolas \& Lines}
+\begin{minipage}[c]{0.3333333333333\textwidth}
 The vertex of the parabola $a x^2 + b x + c = y$ is
 \[
    \left(x = -\frac{b}{2 a}, y = c-\frac{{{b}^{2}}}{4 a} \right).
@@ -264,25 +290,10 @@ An equation of the line that contains the points
   y - y_1 = \left(\frac{y_2-y_1}{x_2-x_1} \right) (x - x_1).
 \]
 The number \(\frac{y_2-y_1}{x_2-x_1} \) is the slope.
+\end{minipage}
 
-\section*{Radicals}
-\begin{alignat*}{2}
-&\sqrt[n]{a} = a^{1/n} \\
-&\sqrt[n]{ab} = \sqrt[n]{a} \sqrt[n]{b}  \quad (\mbox{provided } a,b \geq 0) \\
-&\sqrt[m]{\sqrt[n]{a}} = \sqrt[mn]{a} \\
-&\sqrt[n]{\frac{a}{b}} = \frac{\sqrt[n]{a}}{\sqrt[n]{b}} \\
-&\sqrt[n]{a^n} = \begin{cases} a & n \mbox{ odd} \\  |a| &  n \mbox{ even} \end{cases}
-\end{alignat*}
 
-\section*{Identities}
-\begin{alignat*}{2}
-   &a  \parens*{b + c} = a b + a c \\
-   &\parens*{\parens{a +b}}  \parens*{c + d} = a c + a d + b c + bd \\
-   &\frac{a b + ac}{a} = b + c  \quad (\mbox{provided } a \neq 0) \\
-   &\frac{\frac{a}{b}}{\frac{c}{d}} = \frac{ad}{b c}  \quad (\mbox{provided } b,d \neq 0) \\
-   &\sqrt{a b} = \sqrt{a}\sqrt{b}  \quad (\mbox{provided } a \geq 0, b \geq 0 ) \\
-   &\ln(ab) = \ln(a) + \ln(b) \quad (\mbox{provided } a \geq 0, b \geq 0 ) \\
-\end{alignat*}
+
 
 \section*{Function notation}
 \begin{tabular}{|L | L|} \hline 
@@ -300,21 +311,45 @@ The number \(\frac{y_2-y_1}{x_2-x_1} \) is the slope.
 \mathrm{abs}        &   (-\infty, \infty)  & (0,\infty) &  0   \\
 \sqrt{}        &   (0, \infty)  & (0,\infty) &  0   \\
 \sqrt[3]{}       &   (-\infty, \infty)  & (-\infty, \infty) &  0   \\
-\mathrm{floor}                  &  (-5, 5)   & \integers & [0,1) \\
+\mathrm{floor}                  &  (-\infty, \infty)   & \integers & [0,1) \\
 \mathrm{ceiling}              &  (-\infty, \infty)  &  \integers   & (-1,0] \\ \hline
 \end{tabular}
 
+\section*{Logarithms}
+   \begin{equation*}
+  \log_a(x) = \frac{\ln(x)}{\ln(a)}
+     \end{equation*}
+
+\section*{Compound Interest}
+\begin{minipage}[c]{0.3333333333333\textwidth}
+Interest rate $r$ compounded $n$ times
+per year
+\[  A = P (1 + r/n)^{nt}
+    \]
+Continuous compounding:
+\[
+    A = P \euler^{r t}
+\]
+\end{minipage}
+
 \section*{Graph Translations}
-For the graph of $F(x,y) = 0$  \vspace{-0.25in}
+\begin{minipage}[c]{0.3333333333333\textwidth}
+For the graph of $F(x,y) = 0$  
 \begin{itemize}
- \item The graph of $F(x-h,y)=0$ is the graph of $F(x,y) = 0$ translated $h$ units to the right. \vspace{-0.25in}
- \item The graph of $F(x,y-k)=0$ is the graph of $F(x,y) = 0$ translated $k$ units up. \vspace{-0.25in}
- \item The graph of $F(x/c,y)=0$ is the graph of $F(x,y) = 0$ stretched a factor of $c$ horizontally. \vspace{-0.25in}
+ \item The graph of $F(x-h,y)=0$ is the graph of $F(x,y) = 0$ translated $h$ units to the right. 
+ 
+ \item The graph of $F(x,y-k)=0$ is the graph of $F(x,y) = 0$ translated $k$ units up. 
+ 
+ \item The graph of $F(x/c,y)=0$ is the graph of $F(x,y) = 0$ stretched a factor of $c$ horizontally. 
+ 
  \item The graph of $F(x,y/c)=0$ is the graph of $F(x,y) = 0$ stretched a factor of $c$ vertically.
  \end{itemize}
+\end{minipage}
+ 
+\vfill 
 \section*{Graphs}
 Graph of natural logarithm
-\vspace{0.1in}
+%\vspace{0.1in}
 \begin{tikzpicture}
         \begin{axis}[domain=0.01:15,
             samples=100,
@@ -329,7 +364,7 @@ Graph of natural logarithm
     \end{tikzpicture} \\
     
    Graph of natural exponential
-\vspace{0.1in}
+%\vspace{0.1in}
 \begin{tikzpicture}
         \begin{axis}[domain=-4:2,
             samples=100,
