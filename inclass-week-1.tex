@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
@@ -35,6 +35,7 @@
 \newcommand{\bi}{\, \mathbf{i}}
 \newcommand{\bj}{\, \mathbf{j}}
 \newcommand{\bk}{\, \mathbf{k}}
+\newcommand{\dist}{\, \mathrm{dist}}
 \DeclareMathOperator{\Arg}{\mathrm{Arg}}
 \DeclareMathOperator{\Ln}{\mathrm{Ln}}
 \newcommand{\imag}{\, \mathrm{i}}
@@ -68,18 +69,51 @@
 
 \question [5] Find the \emph{distance} between the points $(7,9)$ and $(-1,-2)$.
 \begin{solution}[2.0in]
+We have
+\begin{align*}
+    \dist((7,9),(-1,-2)) &= \sqrt{(7+1)^2 + (9 + 2)^2}, &(\mbox{distance formula})\\
+                           &= \sqrt{64+ 121}, &(\mbox{arithmetic})\\
+                           &= \sqrt{185}. &(\mbox{arithmetic})
+\end{align*}
+The factors of 185 are $5$ and $37$.  Neither of these factors are perfect squares, so $\sqrt{185}$
+is properly simplified. 
+Unless asked for a decimal approximation, you should leave
+your answers in an exact form. This problem \emph{doesn't} ask for an exact solution, so\
+$13.60147$ is \emph{not} a correct solution.
 
 \end{solution}
 
 \question[5] The \emph{midpoint} of points $P$ and $(5,6)$ is $(-2,3)$. Find the 
 \emph{coordinates} of the point $P$.
-\begin{solution}[2.0in]
+\begin{solution}[2.0in] Let $P = (x,y)$. We have
+    \begin{equation*}
+        \left(\frac{x+5}{2}, \frac{y+6}{2} \right) = (-2,3).
+    \end{equation*}
+    So
+    \begin{align*}
+        \frac{x+5}{2} &= -2,\\
+        \frac{y+6}{2} &= 3.
+    \end{align*}
+    Solving these equations for $x$ and $y$ gives $x=-9$ and $y=0$.
 
 \end{solution}
 
 
 \question[5] Are the three points  $(7,9), (-1,-2)$, and  $(0,10)$ the vertices of
 a right triangle? Explain.
+
+\begin{solution}
+We have
+\begin{align*}
+    \dist((7,9), (-1,2)) &= \sqrt{85} &\mbox{(problem 1)}\\
+    \dist((-1,2), (0,10)) &= \sqrt{1^2 + 8^2} = \sqrt{65} \\
+    \dist((0,10),(7,9)) &= \sqrt{49 + 1^2} = \sqrt{50} .
+\end{align*}
+The largest of these numbers is $\sqrt{85}$. But $\sqrt{85}^2 \neq \sqrt{65}^2 + \sqrt{50}^2$,
+so the three points $(7,9), (-1,-2)$, and  $(0,10)$ are \emph{not} the vertices of a
+right triangle.
+
+\end{solution}
 
 \end{questions}
 \end{document}
