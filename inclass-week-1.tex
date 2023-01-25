@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn,answers]{exam}
+\documentclass[12pt,fleqn]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
@@ -49,6 +49,11 @@
 \newcommand{\term}{\Huge \twemoji{tulip} \normalsize}
 \newcommand{\due}{9:55 \AM}
 \newcommand{\class}{MATH 102}
+
+\usepackage{xcolor}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.95,0.95,0.95}
+
 \begin{document}
 \large
 \vspace{0.1in}
@@ -60,7 +65,7 @@
 
 
 \noindent  In class work  \quiz\/  has questions 1 through  \numquestions \/ with a total of  \numpoints\/  points.   
- This assignment is due at the end of the class period (\emph{\due}).
+ This assignment is due at the end of the class period at {\due}.
 
 \vspace{0.1in}
 
@@ -75,11 +80,30 @@ We have
                            &= \sqrt{64+ 121}, &(\mbox{arithmetic})\\
                            &= \sqrt{185}. &(\mbox{arithmetic})
 \end{align*}
-The factors of 185 are $5$ and $37$.  Neither of these factors are perfect squares, so $\sqrt{185}$
-is properly simplified. 
-Unless asked for a decimal approximation, you should leave
-your answers in an exact form. This problem \emph{doesn't} ask for an exact solution, so\
-$13.60147$ is \emph{not} a correct solution.
+\begin{itemize}
+
+    \item It's easy to misread a question--be careful. I often put what you need to find in italic type (in this case \emph{distance})  in an attempt to clarify what you are looking for.
+    
+    \item The factors of 185 are $5$ and $37$.  Neither of these factors are perfect squares, so $\sqrt{185}$
+    is properly simplified. 
+
+    \item Unless you are asked for a decimal approximation, you should leave
+    your answers in an exact form. This problem \emph{doesn't} ask for an exact 
+    solution, so  $13.60147$ is \emph{not} a correct solution.
+    
+    \item A common error is to do the following:
+    \begin{align*}
+        \sqrt{8^2 + 11^2} = 8 + 11  = 19.
+   \end{align*}
+    But this is \textbf{wrong}. The equation $\sqrt{x^2 + y^2} = x + y$ is not an identity. You can verify this by 
+    pasting in $x = 1$ and $y=1$ into the equation. The result is
+     \begin{align*}
+        \left[\sqrt{1^2 + 1^2} = 1+ 1 \right]  = \left[\sqrt{2} = 2 \right] = \mbox{False}
+   \end{align*}
+   For a list of other common errors, see the last section of our class Quick Reference Sheet (QRS).
+\end{itemize}
+
+
 
 \end{solution}
 
@@ -89,10 +113,20 @@ $13.60147$ is \emph{not} a correct solution.
     \begin{equation*}
         \left(\frac{x+5}{2}, \frac{y+6}{2} \right) = (-2,3).
     \end{equation*}
-    So
+    So we need to solve
     \begin{align*}
         \frac{x+5}{2} &= -2,\\
         \frac{y+6}{2} &= 3.
+    \end{align*}
+    for $x$ and for $y$. Solving the first equation for $x$ gives
+    \begin{align*}
+        \left[  \frac{x+5}{2} = -2 \right] &= [x + 5 = -4], &\mbox{(multiply by 2)}\\
+                                            &= [x=-9]. &\mbox{(add -5)}
+    \end{align*}
+    And solving the second for $y$ gives
+    \begin{align*}
+        \left[  \frac{y+6}{2} = 3 \right] &= [y+6 = 6], &\mbox{(multiply by 2)}\\
+                                           &= [y=0]. &\mbox{(add -6)}
     \end{align*}
     Solving these equations for $x$ and $y$ gives $x=-9$ and $y=0$.
 
@@ -105,9 +139,9 @@ a right triangle? Explain.
 \begin{solution}
 We have
 \begin{align*}
-    \dist((7,9), (-1,2)) &= \sqrt{85} &\mbox{(problem 1)}\\
-    \dist((-1,2), (0,10)) &= \sqrt{1^2 + 8^2} = \sqrt{65} \\
-    \dist((0,10),(7,9)) &= \sqrt{49 + 1^2} = \sqrt{50} .
+    \dist((7,9), (-1,2)) &= \sqrt{85}, &\mbox{(problem 1)}\\
+    \dist((-1,2), (0,10)) &= \sqrt{1^2 + 8^2} = \sqrt{65}, \\
+    \dist((0,10),(7,9)) &= \sqrt{49 + 1^2} = \sqrt{50}.
 \end{align*}
 The largest of these numbers is $\sqrt{85}$. But $\sqrt{85}^2 \neq \sqrt{65}^2 + \sqrt{50}^2$,
 so the three points $(7,9), (-1,-2)$, and  $(0,10)$ are \emph{not} the vertices of a
