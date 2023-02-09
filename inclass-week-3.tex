@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
@@ -82,10 +82,15 @@ $(x=h,y=k)$ and radius $r$
 \end{equation*}
 
 \begin{solution}%[3.5in]
+    \begin{align*}
+        \left[x^2 - 2 x + y^2 + 2 y  =  4 \right ]
+          &= \left[ x^2 - 2 x  + \boxed{1} + y^2 + 2 y + \boxed{1}  =  4 + \boxed{1} + \boxed{1} \right] \\
+           &= \left[ x^2 - 2 x  + \boxed{1} + y^2 + 2 y + \boxed{1}  =  6 \right] \\
+    \end{align*}
+Matching this to   \(x^2 -2 h x + h^2 + y^2 - 2 k y + k^2 = r^2\) gives the center as $(x=-1, y=1)$ and radius $r \sqrt{6}$.
 \end{solution}
 
-\vfill 
-\newpage
+
 \question [5] The number of lawns $L$ a work crew can mow in a day 
 varies jointly with the number of people $N$ in the crew and with
 the time $T$  they work in a day.
@@ -93,18 +98,31 @@ the time $T$  they work in a day.
 Given that $L = 8$ when $N = 5$ and $T = 6$, find $L$ when
 $N = 8$ and $T = 10$.
 \begin{solution}[3.5in]
+There is a constant $k$ such that $L =k N T$. This formula should make sense--doubling the size of the work crew, we
+should be able to mow twice as many lawns--the formula shows that is true. The same is true for working twice as long.
+
+Pasting in $L = 8$ when $N = 5$ and $T = 6$ into $L =k N T$ yields $8 = 30 k$.  So $k = \frac{4}{15}$.  That makes
+our formula
+\begin{equation*}
+L = \frac{4}{15} N T.
+\end{equation*}
+Pasting in $N = 8$ and $T = 10$ gives
+\begin{equation*}
+L = \frac{4}{15} \times 80 = \frac{64}{3} \approx 21.3.
+\end{equation*}
+
+
+
+
 \end{solution}
 
-
-\vfill 
-\newpage
 
 \question The corpulence index CI is an alternative to the 
 body mass index BMI. The CI thought to be more based on physiology than 
 is the BMI. The CI varies jointly with the weight $w$ and with the inverse 
 \emph{cube} of the height $L$. Thus for some number $k$, we have
 \begin{equation*}
-    \mathrm{CI} = k \frac{w}{L^3}
+    \mathrm{CI} = k  \frac{w}{L^3}.
 \end{equation*}
 
 \begin{parts}
@@ -114,11 +132,20 @@ is the BMI. The CI varies jointly with the weight $w$ and with the inverse
     \part [5]  Usan Bolt, a world record holder for the 100 meter dash, is 77 inches
      tall and weighs 207 pounds. Given that Usan Bolt's 
     CI is 12.4, find the numerical value of the  proportionality constant $k$.
-    \begin{solution}[3.5in]
+    \begin{solution}[3.5in] Pasting in the data gives
+     \begin{equation*}
+          12.4 = k \times  \frac{207}{77^3}
+     \end{equation*}
+     Solving this for $k$ gives $k \approx 27,348$.
+     
     \end{solution}
     \part Florence Griffith Joyner, a world record holder for the 100 meter dash, 
     is 67 inches tall and weighs 126 pounds.  Find the CI of Florence Griffith Joyner.
     \begin{solution}%[3.5in]
+    We have
+    \begin{equation*}
+          CI = 27, 348  \times \frac{126}{67^3} \approx 10.9.
+     \end{equation*}
     \end{solution}
     
    % \vfill
