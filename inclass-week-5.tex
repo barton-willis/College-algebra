@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
@@ -10,6 +10,7 @@
 \pointsinmargin
 \pointname{pts}
 
+\usepackage{pdfpages}
 \usepackage[final]{microtype}
 \usepackage[american]{babel}
 \usepackage[T1]{fontenc}
@@ -78,7 +79,7 @@
         \dist((7,2),(-1,-2)) &= \sqrt{(7+1)^2 + (2 + 2)^2}, &(\mbox{distance formula})\\
                                &= \sqrt{64+ 16}, &(\mbox{arithmetic})\\
                                &= \sqrt{80}, &(\mbox{arithmetic}) \\
-                               &= 4 \sqrt{5}.
+                               &= 4 \sqrt{5}.  &(\mbox{factor})
     \end{align*}
     
     
@@ -86,6 +87,9 @@
 
   \question [5] Find the \emph{midpoint} of the points $(2,4)$ and $(5,7)$.
   \begin{solution}[2.0in]
+  \begin{equation*}
+    \mbox{mid point} = \left(\frac{2+5}{2}, \frac{4+7}{2}\right) = \left(\frac{7}{2}, \frac{11}{2}\right) .
+  \end{equation*}
   \end{solution}
 
   \question[5] A line $L$ contains the points $(x=5,y=7)$ and
@@ -95,10 +99,15 @@ $(x=7,y=-1)$.
 
     \part [5] Find an \emph{equation} of the line $L$.
     \begin{solution}[1.5in] 
+    The slope is $\frac{7+1}{5-7} = -4$. An equation of the line is $y-7 = -4 (x-5)$.
     \end{solution}
 
     \part  [5] Find the \emph{x-intercept} of the line $L$.
     \begin{solution}%[1.5in] 
+     Replace $y$ by zero and solve for $x$; we have
+    \begin{equation*} 
+      \left[0-7 = -4 (x-5)\right] = \left[\frac{7}{4} = x-5 \right] = \left[x = \frac{27}{4}\right].
+    \end{equation*}
     \end{solution}
 
 \end{parts}
@@ -108,7 +117,7 @@ $(x=7,y=-1)$.
 
 \question [5] Find an equation of the line that is parallel to the
 line $3 y + 6 x = 1$ and that contains the point $(x=1,y=1)$.
-\begin{solution}[1.5in] 
+\begin{solution}[1.5in] The slope of the line $3 y + 6 x = 1$ is $-2$.  So an equation of the line we are looking for is $y -1 = -2(x-1)$.
 \end{solution}
 
 \question [5] Find the \emph{center} and \emph{radius} of the circle
@@ -117,6 +126,10 @@ line $3 y + 6 x = 1$ and that contains the point $(x=1,y=1)$.
 \)
 
 \begin{solution}[2.4in]
+\begin{equation*}
+\left[ x^2 + 2 x + y^2 - 6 y = -6 \right] = \left[ x^2 + 2 x + 1 + y^2 - 6 y  + 9 = -6 + 1 + 9 \right].
+\end{equation*}
+So the center is $(x=1, y=-3)$ and the radius is $\sqrt{4} = 2$.
 \end{solution}
 
 \question [5] The number of doghouses $L$ a work crew can build
@@ -124,7 +137,14 @@ line $3 y + 6 x = 1$ and that contains the point $(x=1,y=1)$.
 the time $T$  they work in a day. Given that $L = 12$ when $N = 5$ and $T = 6$, find $L$ when
 $N = 20$ and $T = 10$.
 \begin{solution}%[3.5in]
-
+There is a constant $k$ such that
+\begin{equation*}
+  L = k N T.
+\end{equation*}
+Pasting in the data $L = 12$ when $N = 5$ and $T = 6$ gives $k = \frac{12}{30}$.  When $N = 20$ and $T = 10$, we have
+\begin{equation*}
+   L = \frac{12}{30} \times 20 \times 10 = 80.
+\end{equation*}
 
 \end{solution}
 \newpage
@@ -144,61 +164,79 @@ the closed interval $[-2,2]$
 
 \part [5] Find the numerical value of $U(-2)$.
 \begin{solution}[0.5in]
+$U(-2) = 5$.
 
 \end{solution}
 
 \part [5] Find the \emph{range} of $U$.
 \begin{solution}[2.3in]
+$\range(U)=[0,5]$.
 
 \end{solution}
 
 \part [5] Find the interval(s) on which $U$ is \emph{decreasing.}
 \begin{solution}[2.3in]
+$[-2,\frac{1}{2}].$
 
 \end{solution}
 
 \part [5] Find the interval(s) on which $U$ is \emph{increasing.}
 \begin{solution}[2.3in]
+$[\frac{1}{2},1].$
 
 \end{solution}
 
 \part [5] Find the interval(s) on which $U$ is \emph{constant.}
 \begin{solution}[2.3in]
-
+$[1,2].$
 \end{solution}
 
 \part [5] Sketch a graph of the equation $y-1 = U(x-1)$.
-\begin{solution}%[2.3in]
 
+\begin{solution}%[2.3in]
+We need to translate the graph of $y = U(x)$ one unit to the right and one unit up.  Here it is!
+
+  \includegraphics[scale=0.2]{desmos-graph(16).png}
 \end{solution}
 
 \end{parts}
 
-\newpage
+%\newpage
 \question Define a function $Q$ by $Q(x) = \begin{cases}  x &  x < 1 \\   5 &  1 \leq x \end{cases}$.
 
 \begin{parts}
 \part [5]  Find the numerical value of $Q(-2)$.
 \begin{solution}[2.3in]
-
+$Q(-2) = -2$
 \end{solution}
 
 \part [5]  Find the numerical value of $Q(2)$.
 \begin{solution}[2.3in]
+$Q(2) = 5$
 
 \end{solution}
 
 \part [5] Sketch a graph of $Q$.
 \begin{solution}[2.3in]
-
+%\begin{figure}[h]
+ %   \begin{center}
+    \includegraphics[scale=0.2]{desmos-graph(15).png}
+%\end{center}
+%\caption{Graph of the equation$y = Q(x)$.}
+%\end{figure}
 \end{solution}
 
 \part Find the \emph{average rate of change} of $Q$ on the interval $[-2,2]$.
 
-
+\begin{solution}
+\[
+  \underset{[-2,2]}{\mbox{ARC}}(Q) = \frac{Q(2) - Q(-2)}{2 - (-2)} = \frac{5 + 2}{2+2} = \frac{7}{4}.
+\]
+\end{solution}
 
 
 \end{parts}
 
 \end{questions}
+\includepdf[pages=-]{college-algebra-quick-reference.pdf}
 \end{document}
