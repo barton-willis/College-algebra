@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
@@ -78,26 +78,47 @@
 
     \part[2] $y - 8 = x^2$
 
-    \begin{solution}[1.5in]
+    \begin{solution}[1.5in] Matching $y - 8 = x^2$ to $y - k = a (x-h)^2$
+      gives $k=8, h=0$, and $a=1$.  So the vertex is the point $(0,8)$.
+
     \end{solution}
 
     \part[2] $y - 8 = \sqrt{2} (x + 2)^2$
 
-    \begin{solution}[1.5in]
+    \begin{solution}[1.5in] Matching $y - 8 = \sqrt{2} (x + 2)^2$ to $y - k = a (x-h)^2$
+      gives $k=8, h=-2$, and $a=\sqrt{2}$.  
+      So the vertex is the point $(-2,8)$.
+
+
     \end{solution}
 
-    \part[2] $y - 8 = \sqrt{2} (x + 2)^2$
-
-    \begin{solution}[1.5in]
-    \end{solution}
-
-    \part[2] $y=2 {{x}^{2}}-28 x+103$
+        \part[2] $y=2 {{x}^{2}}-28 x+103$
 
    
-    \begin{solution}[1.5in]
+    \begin{solution}[1.5in] Matching $y=2 {{x}^{2}}-28 x+103$ to
+      $y=a x^2 + b x + c$ gives $a=2,b=-28$, and $c=103$. The 
+      vertex  is the point
+      \begin{equation}
+        \left(-\frac{b}{2 a}, c - \frac{b^2}{4 a}\right) = 
+        \left(-\frac{-28}{2 \times 2}, 103 - \frac{(-28)^2}{4 \times 2}\right) = 
+        \left(7, 5 \right).
+      \end{equation}
     \end{solution}
 
     \part[2] $y=3 (x-2)(x-4)$
+    \begin{solution} To match $y=3 (x-2)(x-4)$ to $y=a x^2 + b x + c$,
+      we need to expand (use FOIL) $y=3 (x-2)(x-4)$. We have
+      \begin{equation*}
+          y = 3 (x-2)(x-4) = 3(x^2 -6 x + 8) = 3 x^2 - 18 x + 24.
+      \end{equation*}
+      So $a=3, b=-18$, and $c=24$. The 
+      vertex  is the point
+      \begin{equation*}
+        \left(-\frac{b}{2 a}, c - \frac{b^2}{4 a}\right) = 
+        \left(-\frac{-18}{2 \times 3}, 24 -\frac{(-18)^2}{4 \times 3} \right) =
+        \left( 3, -3 \right).
+      \end{equation*}
+    \end{solution}
 
 
   \end{parts}
