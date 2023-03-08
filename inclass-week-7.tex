@@ -1,10 +1,12 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
 \usepackage{epsfig}
 \usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
 \usepackage[letterpaper, margin=0.75in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
 \addpoints
 \boxedpoints
 \pointsinmargin
@@ -63,7 +65,11 @@
 \textbf{Row and Seat}:\hrulefill\\
 \vspace{0.1in}
 
-
+\begin{quote}
+``\emph{Some things will drop out of the 
+public eye and go away, but there will always be science, engineering, 
+and technology. And there will always, always be mathematics.}'' \hfill {\sc Katherine Johnston}
+\end{quote}
 \noindent  In class work  \quiz\/  has questions 1 through  \numquestions \/ with a total of  \numpoints\/  points.   
  This assignment is due at the end of the class period (\due).
 This assignment is printed on \textbf{both} sides of the paper.
@@ -72,13 +78,18 @@ This assignment is printed on \textbf{both} sides of the paper.
 
 \begin{questions} 
 
-  \question Follow these steps to \emph{solve} the inequality $x^2 - x \geq 12$
+  \question Follow these steps to solve the inequality $x^2 - x \geq 12$
 
   \begin{parts}
 
-    \part [2] Solve the equation $x^2 -x = 12$.
+    \part [2] \emph{Solve} the equation $x^2 -x = 12$.
 
     \begin{solution}[2.0in]
+      \begin{align*}
+        \left[x^2 -x = 12 \right] &= \left[x^2 -x -12 =0 \right]  &\mbox{(subtract 12)}\\
+                    &= \left[(x-4)(x+3) =0 \right]  &\mbox{(factor)}\\
+                    &= \left[x=4 \mbox{ or } x=-3  \right] & \mbox{(teacher's pet fact)}      
+      \end{align*}
 
     \end{solution}
 
@@ -86,24 +97,53 @@ This assignment is printed on \textbf{both} sides of the paper.
     pasting them into the equation $x^2 -x = 12$.
 
     \begin{solution}[2.0in]
+      Pasting in $x \to 4$ into $x^2 -x = 12$ gives
+      \begin{equation}
+          \left[4^2 - 4 = 12\right] = [12=12] = \mbox{True!}.
+      \end{equation}
+      And Pasting in $x \to -3$ into $x^2 -x = 12$ gives
+      \begin{equation}
+          \left[(-3)^2 + 3 = 12\right] = [12=12] = \mbox{True!}.
+      \end{equation}
 
     \end{solution}
 
-    \part [2] Put both of your solutions on a number line, correctly
-    ordered from least to greatest.
+    \part [2] Put both of your solutions on a \emph{number line}, correctly
+    ordered from \emph{least to greatest}.
 
     \begin{solution}%[1.0in]
+
+      \usetikzlibrary{arrows}
+\begin{tikzpicture}
+\draw[latex-] (-6.5,0) -- (6.5,0) ;
+\draw[-latex] (-6.5,0) -- (6.5,0) ;
+\foreach \x in  {-6,-4,-2,0,2,4,6}
+\draw[shift={(\x,0)},color=black] (0pt,3pt) -- (0pt,-3pt);
+\foreach \x in {-6,-4,-2,0,2,4,6}
+\draw[shift={(\x,0)},color=black] (0pt,0pt) -- (0pt,-3pt) node[below] 
+{$\x$};
+%\draw[*-o] (-3,-3) -- (-3,-3)
+\draw[*-o] (-3,0);
+\draw[*-o] (4,0);
+\end{tikzpicture}
 
     \end{solution}
 
     \vfill
     \newpage
 
-    \part [2] Make a table of the intervals determined by the number line 
+    \part [2] Make a \emph{table} of the intervals determined by the number line 
     from the previous part, the test points, and the
     value of $x^2 - x \geq 12$ at each test point.
         
     \begin{solution}[4.0in]
+
+      \begin{tabular}{|c|c|c|c|} \hline \hline 
+        \textbf{Interval} &  $\mathbf{x}$  & $\mathbf{x^2 -x = 12}$  & \textbf{true/false}\\ \hline 
+        $((-\inf,-3)$  & -4 &  $(-4)^2 + 4 \leq 12 $ & true \\  \hline 
+        $((-3,4)$  & 0 &  $(0)^2 + 0 \leq 12 $  &false \\ \hline 
+        $((4, \inf)$  & 5 &  $(5)^2 + 4 \leq 12 $ & true  \\ \hline        
+      \end{tabular}
 
     \end{solution}
 
