@@ -20,6 +20,7 @@
 \usepackage{upgreek,amsmath}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{tikz}
 
 \newcommand{\dotprod}{\, {\scriptzcriptztyle\stackrel{\bullet}{{}}}\,}
 
@@ -60,6 +61,50 @@
 \noindent \makebox[3.0truein][l]{\textbf{Bonus \quiz, \term \/ \the\year}}
 %\textbf{Row and Seat}:\hrulefill\\
 \vspace{0.1in}
+
+\documentclass[tikz,border=5pt]{standalone}
+
+\begin{document}
+\begin{tikzpicture}[thick, scale=0.8]
+
+% Head
+\draw[fill=gray!30] (0,0) circle (2);
+
+% Ears
+\draw[fill=gray!50] (-2,1.5) -- (-2.5,2) -- (-1.5,2) -- cycle;
+\draw[fill=gray!50] (2,1.5) -- (2.5,2) -- (1.5,2) -- cycle;
+
+% Eyes
+\draw[fill=white] (-0.7,0.5) circle (0.5);
+\draw[fill=white] (0.7,0.5) circle (0.5);
+\draw (-0.7,0.5) circle (0.2);
+\draw (0.7,0.5) circle (0.2);
+\fill (-0.7,0.7) circle (0.1);
+\fill (0.7,0.7) circle (0.1);
+
+% Nose and mouth
+\draw[fill=pink!70] (0,-0.2) circle (0.4);
+\draw (-0.2,-0.4) -- (0.2,-0.4);
+\draw (-0.2,-0.6) -- (0.2,-0.6);
+
+% Whiskers
+\draw (0,0.1) -- (-1.5,0.5);
+\draw (0,0.1) -- (1.5,0.5);
+\draw (0,-0.1) -- (-1.5,-0.5);
+\draw (0,-0.1) -- (1.5,-0.5);
+
+% Body
+\draw[fill=gray!30] (0,-4) ellipse (2 and 3);
+
+% Legs
+\draw[fill=gray!50] (-1.2,-4) rectangle (-0.8,-6);
+\draw[fill=gray!50] (1.2,-4) rectangle (0.8,-6);
+\draw[fill=gray!50] (-2,-5) rectangle (-1.5,-7);
+\draw[fill=gray!50] (2,-5) rectangle (1.5,-7);
+
+\end{tikzpicture}
+\end{document}
+
 
 
 To earn five bonus points,  you must do the following:

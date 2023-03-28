@@ -56,6 +56,8 @@
 \newcommand{\term}{Spring}
 \newcommand{\due}{9:55 \AM}
 \newcommand{\class}{MATH 102}
+
+\usepackage{siunitx}
 \begin{document}
 \large
 \vspace{0.1in}
@@ -75,10 +77,12 @@ and technology. And there will always, always be mathematics.}'' \hfill {\sc Kat
 This assignment is printed on \textbf{both} sides of the paper.
 \vspace{0.1in}
 
+$\num[input-exponent-markers ={d,b}]{-3.4b-20}$
 
 \begin{questions} 
 
-  \question Follow these steps to solve the inequality $x^2 - x \geq 12$
+   
+  \question Follow these steps to solve the inequality $x^2 - x \geq 12$.
 
   \begin{parts}
 
@@ -98,13 +102,13 @@ This assignment is printed on \textbf{both} sides of the paper.
 
     \begin{solution}[2.0in]
       Pasting in $x \to 4$ into $x^2 -x = 12$ gives
-      \begin{equation}
-          \left[4^2 - 4 = 12\right] = [12=12] = \mbox{True!}.
-      \end{equation}
+      \begin{equation*}
+          \left[4^2 - 4 = 12\right] = [12=12] = \mbox{True!}
+      \end{equation*}
       And Pasting in $x \to -3$ into $x^2 -x = 12$ gives
-      \begin{equation}
-          \left[(-3)^2 + 3 = 12\right] = [12=12] = \mbox{True!}.
-      \end{equation}
+      \begin{equation*}
+          \left[(-3)^2 + 3 = 12\right] = [12=12] = \mbox{True!}
+      \end{equation*}
 
     \end{solution}
 
@@ -139,16 +143,23 @@ This assignment is printed on \textbf{both} sides of the paper.
     \begin{solution}[4.0in]
 
       \begin{tabular}{|c|c|c|c|} \hline \hline 
-        \textbf{Interval} &  $\mathbf{x}$  & $\mathbf{x^2 -x = 12}$  & \textbf{true/false}\\ \hline 
-        $((-\inf,-3)$  & -4 &  $(-4)^2 + 4 \leq 12 $ & true \\  \hline 
-        $((-3,4)$  & 0 &  $(0)^2 + 0 \leq 12 $  &false \\ \hline 
-        $((4, \inf)$  & 5 &  $(5)^2 + 4 \leq 12 $ & true  \\ \hline        
+        \textbf{Interval} &  $\mathbf{x}$  & $\mathbf{x^2 -x \geq 12}$  & \textbf{true or false}\\ \hline 
+        $((-\infty,-3)$  & -4 &  $(-4)^2 + 4 \geq 12 $ & true \\  \hline 
+        $((-3,4)$  & 0 &  $0^2 + 0 \geq  12 $  &false \\ \hline 
+        $((4, \infty)$  & 5 &  $5^2 + 4 \geq 12 $ & true  \\ \hline        
       \end{tabular}
 
     \end{solution}
 
 
     \part [2] Finish the sentence:  The solution set is
+    $(-\infty, -3] \cup [4 ,\infty)$. 
+    
+    We include the endpoints in each interval (use a bracket, not a paren) because we're
+    solving $x^2 - x \geq 12$. And that allows equality. Here in 
+    a bit, this rule will be modified.
+
+   
   \end{parts}
 \end{questions}
 \end{document}
