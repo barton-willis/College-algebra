@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[10pt]{article}
 %\documentclass[border=0.1cm]{standalone}
 \usepackage{wasysym}
 \usepackage{phonenumbers}
@@ -7,7 +7,8 @@
 \usepackage[super]{nth}
 \usepackage[paperwidth=8.5in,paperheight=11in,margin=0.45in]{geometry} 
 \usepackage[USenglish]{babel}
-\usepackage[USenglish]{isodate}% http://ctan.org/pkg/isodate
+\usepackage{colortbl}
+%\usepackage[USenglish]{isodate}% http://ctan.org/pkg/isodate
 \usepackage[final]{pdfpages}
 \usepackage{hyperref}
 \hypersetup{
@@ -28,7 +29,8 @@
 \newcounter{hw}\setcounter{hw}{0}
 \newcommand{\hw}{%\
 \setcounter{hw}{\value{hw}+1}
-\textbf{IC \thehw}}
+\textbf{ }}
+%\textbf{ \cellcolor[gray]{0.92} HW  \thehw}}
 
 \newcounter{on}\setcounter{on}{0}
 \newcommand{\on}{%\
@@ -39,8 +41,9 @@
 \newcounter{ex}\setcounter{ex}{0}
 \newcommand{\ex}{%\
 \setcounter{ex}{\value{ex}+1}
-\textbf{Exam \theex}}
+\textbf{ \cellcolor[gray]{0.92} Exam \theex}}
 
+\newcommand{\holiday}[1]{No class (#1) }
 \usepackage[T1]{fontenc} 
 \usepackage{fourier}
 %\usepackage{tgschola} %to look retro
@@ -50,6 +53,17 @@
     \setlength\rightmargin{#2}}
     \item[]}
   {\end{list}}
+
+% see https://tex.stackexchange.com/questions/325133/advdate-in-tables-does-not-advance-date-correctly
+\usepackage{datetime,advdate}
+
+
+\SetDate[21/08/2023] 
+\newdateformat{mmydate}{\THEDAY\ \shortmonthname[\THEMONTH]}
+\makeatletter
+\renewcommand\AdvanceDate[1][\@ne]{\global\advance\day#1 \FixDate}
+\makeatother
+
 
 
 \newcounter{wk}\setcounter{wk}{0}
@@ -70,7 +84,7 @@
   \begin{enumerate}[(a)]
     \addtolength{\itemsep}{-0.75\itemsep}}
   {\end{enumerate}}
-  \cleanlookdateon% Remove ordinal day reference
+%  \cleanlookdateon% Remove ordinal day reference
   \newcommand{\RomanNumeralCaps}[1]
       {\MakeUppercase{\romannumeral #1}}
 
@@ -103,114 +117,62 @@
    % \small
 \begin{tabular}  {|l|l|l|l|l|}
 \hline
-{\bf Week}  & \textbf{Week Starting} &  {\bf Section(s)} & {\bf Topic(s)} & \textbf{Assessment} \\ \hline
-\wk  &  & \S 1.1 & Sets of Real Numbers and the Cartesian Coordinate Plane  &  \\ 
+\textbf{Week}  & \textbf{Week of} & \textbf{ Section(s)} & \textbf{Topic(s)} & \textbf{Assessment(s)} \\ \hline
+\wk  & \mmydate\today  & \S 1.1 & Sets of Real Numbers and the Cartesian Coordinate Plane  &  \\ 
      &  & \S1.2  & Relations &  \\
-     &  & \S1.3  & Introduction to Functions & \\ \hline
-\wk  &  & \S 1.4 & Function Notation & \\ 
+     &  & \S1.3  & Introduction to Functions & \hw \\ \hline
+\wk  & \AdvanceDate[7] \mmydate\today   & \S 1.4 & Function Notation & \\ 
      &  & \S 1.5 & Function Arithmetic & \\
-     &  & \S 1.6 & Graphs of Functions & \\ \hline
-\wk  &  & \S 1.7  & Transformations & \\
-\wk  &  & \S 2.1  & Linear Functions    & \\ 
-     &  & \S 2.2  & Absolute Value Functions & \\ \hline
-\wk  &  & \S 2.3  & Quadratic Functions & \\ 
-     &  & \S 2.4  & Inequalities with Absolute Value and Quadratic Functions & \\ 
-     &  &    & \textbf{Review  \S 1.1--\S2.4} & \\ \hline
-\wk  &  &             &  & \ex \\
-     &  & \S 3.1 &  Graphs of Polynomials & \\ 
+     &  & \S 1.6 & Graphs of Functions &  \hw \\ \hline
+\wk  & \AdvanceDate[7] \mmydate\today   &   & \holiday{Labor Day}  & \\
+ &  & \S 1.7  & Transformations & \\
+  &  & \S 2.1  & Linear Functions    &  \hw  \\  \hline
+\wk     &   \AdvanceDate[7] \mmydate\today & \S 2.2  & Absolute Value Functions & \\ 
+  &  & \S 2.3  & Quadratic Functions & \\ 
+  &  & \S 2.4  & Inequalities with Absolute Value and Quadratic Functions &   \\  \hline 
+\wk  & \AdvanceDate[7] \mmydate\today  &   \S 2.4      &  Inequalities with Absolute Value and Quadratic Functions      &  \\
+       &  & \S1.1 - \S2.4  &Review  & \\
+             &  &  & &  \ex\\ \hline 
+ \wk    &  \AdvanceDate[7] \mmydate\today  & \S 3.1 &  Graphs of Polynomials & \\ 
+    &  & \S 3.1 &  Graphs of Polynomials & \\ 
      &  & \S 3.2 & The Factor Theorem and the Remainder Theorem & \\ \hline
-\wk  &  & \S 3.3 & Real Zeros of Polynomials & \\ 
-\wk  &  & \S 4.1 & Introduction to Rational Functions & \\ 
-     &  & \S 4.2 & Graphs of Rational Functions & \\ \hline
-\wk  &  & \S 4.3 & Rational Inequalities and Applications & \\
-     &  &        & \textbf{Review \S 3.1--\S 4.3} & \\
-     &  &        &                       & \ex \\ \hline
+\wk  & \AdvanceDate[7] \mmydate\today  & \S 3.3 & Real Zeros of Polynomials & \\ 
+  &  & \S 4.1 & Introduction to Rational Functions &   \\ 
+     &  & \S 4.2 & Graphs of Rational Functions & \hw  \\  \hline
+\wk  & \AdvanceDate[7] \mmydate\today  & \S 4.3 & Rational Inequalities and Applications & \\
+     &            & \S 4.3 & Rational Inequalities and Applications & \\
+     &  &    \S 3.1--\S 4.3     & Review & \hw \\ \hline 
+\wk & \AdvanceDate[7] \mmydate\today  & & &  \ex \\ 
+\wk   &   & \S 5.1 & Function Composition & \\
+     &         &  \S5.2 & Inverse Functions & \\  \hline
+ \wk    &    \AdvanceDate[7] \mmydate\today      &  \S6.1 & Introduction to Exponential and Logarithmic Functions &  \hw \\ 
+\wk  & \AdvanceDate[7] \mmydate\today  &  & \holiday{Fall Break}  & \\
+  &    & \S 6.2 & Properties of Logarithms & \\
+\wk  &  & \S 6.2 & Properties of Logarithms &  \hw \\ \hline 
+    &     \AdvanceDate[7] \mmydate\today      & \S 6.3 & Exponential Equations and Inequalities & \\
+    &          & \S 6.4 &  Logarithmic Equations and Inequalities & \\ 
+ &   & \S 6.5 &  Applications of Exponential and Logarithmic Functions & \\ \hline 
+\wk       &      \AdvanceDate[7] \mmydate\today      &  \S 6.5          &   Applications of Exponential and Logarithmic Functions & \\
+     &  &        & Review \S 3.1--\S 4.3 & \hw \\ 
+      &      &            &   &  \cellcolor[gray]{0.92} \ex  \\ \hline
+\wk &  \AdvanceDate[7] \mmydate\today  &\S 8.1& Systems of Linear Equations: Gaussian Elimination & \\
+       &   &    \S 8.1    & Systems of Linear Equations: Gaussian Elimination & \\
+       &   &    \S 8.2  & Systems of Linear Equations: Augmented Matrices &  \hw \\ \hline 
+\wk &  \AdvanceDate[7] \mmydate\today  & \S 9.1 & Sequences & \\ 
+      &   &     \S 9.1 & Sequences & \\ 
+      &   &     \S 9.2 & Summation &  \hw \\ \hline 
+\wk &  \AdvanceDate[7] \mmydate\today & \S 9.2   & Summation & \hw \\
+      &   &    &  \holiday{Thanksgiving}  & \\  
+       &   &    &  \holiday{Thanksgiving}  & \\  \hline 
+\wk &  \AdvanceDate[7] \mmydate\today &  &  & \\
+      &   &      &   & \\ 
+           &       & &   & \\  \hline       
+\wk &  \AdvanceDate[7] \mmydate\today &  &  & \\
+      &   &      &   & \\ 
+           &       & &   & \\  \hline       
+\wk &  \AdvanceDate[7] \mmydate\today & & & Final Exam \\ \hline
+                     
 \end{tabular}
 \end{center}
 \end{document}
     
-
-
-1.2 
-
- 
-
-1.3 Introduction to Functions 
-
-Week 2 
-
-1.4 Function Notation 
-
-1/30-2/3 
-
-1.5 Function Arithmetic 
-
- 
-
-1.6 Graphs of Functions 
-
-Week 3 
-
-1.7 Transformations 
-
-2/6-2/10 
-
-2.1 Linear Functions 
-
- 
-
-2.2 Absolute Value Functions 
-
-Week 4 
-
-2.3 Quadratic Functions 
-
-2/13-2/17 
-
-2.4 Inequalities with Absolute Value and Quadratic Functions 
-
- 
-
-Review 
-
-Week 5 
-
-Exam 1 
-
-2/20-2/24 
-
-3.1 Graphs of Polynomials 
-
- 
-\begin{center}
-    \small
-\begin{tabular}  {|l|l|l|l|l|}
-\hline
-{\bf Week}  & \textbf{Week Starting} &  {\bf Section(s)} & {\bf Topic(s)} & \textbf{Assessment} \\
-\hline \hline 
-\wk    &  \printdate{23/1/\the\year} &    \S 2.1, \S 2.2  &  Distance, midpoint, graphs  & \hw  \\
-\wk    & \printdate{30/1/\the\year}   &  \S2.3, \S2.4, \S3.1 &  Lines, circles, functions & \hw, \on  \\
-\wk    & \printdate{6/2/\the\year}&     \S3.2, \S3.3, \S3.4 & Graphs, library of functions, piecewise fuctions &  \hw, \on  \\
-\wk    & \printdate{13/2/\the\year}   &  \S3.4, \S3.5 & Library of functions, Transformations  &   \hw, \on      \\ \hline
-\wk    & \printdate{20/2/\the\year} &  \S4.1  &  Linear functions \& models   & \textbf{\ex}, \hw, \on   \\ 
-\wk    & \printdate{27/2/\the\year}    & \S4.3, \S4.4  &  Quadratic functions  \& models &    \hw, \on   \\
-\wk    & \printdate{6/3/\the\year}     & \S4.5, \S5.1 &  Quadratic inequalities; Polynomials  & \hw, \on  \\
-\wk    & \printdate{20/3/\the\year}   & \S5.2, \S5.3, \S5.4 &   Rational functions; Graphs of polynomials &  \hw  \\ \hline
-\wk   &  \printdate{27/3/\the\year}   & \S5.4  &  Graphs of rational functions  &  \textbf{\ex}, \hw, \on  \\ 
-\wk   &  \printdate{3/4/\the\year}      &   \S6.1, \S6.2 &  Function composition; Inverse functions &   \hw, \on  \\
-\wk   &  \printdate{10/4/\the\year}   &   \S6.3, \S6.4, \S6.5 & Exponential \& logarithmic functions   & \hw, \on   \\
-\wk   & \printdate{17/4/\the\year}  & \S6.6, \S6.7 &  Logarithmic \& exponential equations; Financial models   &   \textbf{\ex}, \hw, \on  \\ \hline
-\wk   & \printdate{24/4/\the\year} & \S6.8 & Exponential growth and decay & \hw, \on  \\
-\wk   & \printdate{1/5/\the\year}    &  \S8.1, \S8.4,  &  Linear equations; Matrices &  \hw, \on    \\
-\wk   & \printdate{8/5/\the\year}   &  \S9.1, \S9.2, \S9.3    & Sequences and series &  \on     \\
- \wk   & \printdate{15/5/\the\year}     &  &    \hfill  & \textbf{ Final Exam}  \\  \hline
-   
-\end{tabular}
-\end{center}
-
-
-
-
-
-\end{document}
-
