@@ -29,8 +29,7 @@
 \newcounter{hw}\setcounter{hw}{0}
 \newcommand{\hw}{%\
 \setcounter{hw}{\value{hw}+1}
-\textbf{ }}
-%\textbf{ \cellcolor[gray]{0.92} HW  \thehw}}
+\textbf{ \cellcolor[gray]{0.92} HW  \thehw}}
 
 \newcounter{on}\setcounter{on}{0}
 \newcommand{\on}{%\
@@ -110,17 +109,17 @@
 \newcommand{\officehours}{Monday, Wednesday, and Friday 10:00\AM-11:00\AM,
     Tuesday and Thursday 12:00 noon-2:00\PM, and by appointment.}
 
+\newcommand{\classday}[5]{#1 & #2 & #3 & #4 & #5 \\}
 \begin{document}
-
 
 \begin{center}
    % \small
 \begin{tabular}  {|l|l|l|l|l|}
 \hline
 \textbf{Week}  & \textbf{Week of} & \textbf{ Section(s)} & \textbf{Topic(s)} & \textbf{Assessment(s)} \\ \hline
-\wk  & \mmydate\today  & \S 1.1 & Sets of Real Numbers and the Cartesian Coordinate Plane  &  \\ 
-     &  & \S1.2  & Relations &  \\
-     &  & \S1.3  & Introduction to Functions & \hw \\ \hline
+\classday{\wk}{\mmydate\today}{\S 1.1}{Sets of Real Numbers and the Cartesian Coordinate Plane}{}
+\classday{}{}{\S1.2}{Relations}{}
+\classday{}{}{\S1.3}{Introduction to Functions}{\hw} \hline
 \wk  & \AdvanceDate[7] \mmydate\today   & \S 1.4 & Function Notation & \\ 
      &  & \S 1.5 & Function Arithmetic & \\
      &  & \S 1.6 & Graphs of Functions &  \hw \\ \hline
