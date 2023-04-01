@@ -1,70 +1,38 @@
 \documentclass[11pt]{article}
-%\documentclass[border=0.1cm]{standalone}
-%\usepackage{wasysym}
-%\usepackage{phonenumbers}
-%\usepackage{marvosym}
-\usepackage{xcolor}
-%\usepackage[super]{nth}
 \usepackage[paperwidth=8.5in,paperheight=11in,margin=0.45in]{geometry} 
 \usepackage[USenglish]{babel}
 \usepackage{colortbl}
-%\usepackage[USenglish]{isodate}% http://ctan.org/pkg/isodate
-%\usepackage[final]{pdfpages}
-%\usepackage{hyperref}
-%\hypersetup{
-%  colorlinks   = true, %Colours links instead of ugly boxes
-%  urlcolor     = black, %Colour for external hyperlinks
-%  linkcolor    = black, %Colour of internal links
-%  citecolor    = black %Colour of citations
-%}
-\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
-\frenchspacing
+\usepackage[final]{microtype}
 \usepackage[nodayofweek,level]{datetime}
-\usepackage{calc,url}
-\newcounter{qz}\setcounter{qz}{0}
-\newcommand{\qz}{%\
-\setcounter{qz}{\value{qz}+1}
-\textbf{In-class  \theqz} \,}
+\usepackage{calc}
 
 \newcounter{hw}\setcounter{hw}{0}
 \newcommand{\hw}{%\
 \setcounter{hw}{\value{hw}+1}
 \textbf{ \cellcolor[gray]{0.92} HW  \thehw}}
 
-\newcounter{on}\setcounter{on}{0}
-\newcommand{\on}{%\
-\setcounter{on}{\value{on}+1}
-\textbf{OL \theon}}
-
-
 \newcounter{ex}\setcounter{ex}{0}
 \newcommand{\ex}{%\
 \setcounter{ex}{\value{ex}+1}
 \textbf{ \cellcolor[gray]{0.92} Exam \theex}}
 
-\newcommand{\holiday}[1]{No class (#1) }
-\usepackage[T1]{fontenc} 
-\usepackage{fourier}
-%\usepackage{tgschola} %to look retro
-\newenvironment{mypar}[2]
-  {\begin{list}{}%
-    {\setlength\leftmargin{#1}
-    \setlength\rightmargin{#2}}
-    \item[]}
-  {\end{list}}
-
-% see https://tex.stackexchange.com/questions/325133/advdate-in-tables-does-not-advance-date-correctly
-\usepackage{datetime,advdate}
-
-
-\SetDate[21/08/2023] 
-\newdateformat{mmydate}{\THEDAY\ \shortmonthname[\THEMONTH]}
-\makeatletter
-\renewcommand\AdvanceDate[1][\@ne]{\global\advance\day#1 \FixDate}
 \newcounter{wk}\setcounter{wk}{0}
 \newcommand{\wk}{%\
 \setcounter{wk}{\value{wk}+1}
 \thewk \,\,}
+
+\newcommand{\holiday}[1]{No class (#1) }
+\usepackage[T1]{fontenc} 
+\usepackage{fourier}
+
+% see https://tex.stackexchange.com/questions/325133/advdate-in-tables-does-not-advance-date-correctly
+\usepackage{datetime,advdate}
+
+% Set to first day of the term
+\SetDate[21/08/2023] 
+\newdateformat{mmydate}{\THEDAY\ \shortmonthname[\THEMONTH]}
+\makeatletter
+\renewcommand\AdvanceDate[1][\@ne]{\global\advance\day#1 \FixDate}
 
 
 \newcommand{\nweek}[3]{\wk & \AdvanceDate[7] \mmydate\today &  #1 & #2 & #3 \\}
@@ -140,8 +108,11 @@
   \nweek{9.2}{Summation}{}
    \mweek{}{Catch up or Review}{}
    \eweek{}{Catch up or Review}{}
-  
+  \nweek{}{}{\textbf{ \cellcolor[gray]{0.92} Final Exam} } \hline
 \end{tabular}
 \end{center}
+
+
+
 \end{document}
     
