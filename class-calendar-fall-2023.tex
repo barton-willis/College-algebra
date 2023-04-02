@@ -7,6 +7,8 @@
 \usepackage{calc}
 \usepackage[dvipsnames]{xcolor}
 
+\newcommand\AM{a.m.} %https://www.unk.edu/ccr/news-internal-communication/writing-style-guide.php
+\newcommand\PM{p.m.}
 % no page numbers
 \pagestyle{empty}
 
@@ -31,14 +33,14 @@
 % Format a holiday
 \newcommand{\holiday}[1]{\textbf{No class} (#1)}
 
+% see https://www.unk.edu/ccr/marketing-advertising/branding-and-identity-marks/typefaces.php
 \usepackage[T1]{fontenc} 
-\usepackage{fourier}
+\usepackage{utopia}
 
 % see https://tex.stackexchange.com/questions/325133/advdate-in-tables-does-not-advance-date-correctly
+% see also  https://pastebin.com/raw/7pVPQweM
 \usepackage{datetime,advdate}
-
 \newdateformat{mydate}{\THEDAY\ \shortmonthname[\THEMONTH]}
-% see https://pastebin.com/raw/7pVPQweM
 \makeatletter
 \renewcommand\AdvanceDate[1][\@ne]{%
   \global\advance\day#1 \FixDate
@@ -46,6 +48,7 @@
   \global\advance\month\z@
   \global\advance\year\z@}
 \makeatother
+
 %nweek: format the first week of the term--it does advance the date
 %mweek  format the a class day with out a date or a horizontal line
 %eweek  format the last class day of a week (draws a horizontal line)
@@ -68,10 +71,23 @@
 
 % Set this to a message about an exam day
 \newcommand{\examday}{\textbf{Exam Day} (\mydate\today)}
+
+% Message about final exam
+\newcommand{\finalExam}[1]{\textbf{Final Exam }(#1)}
+
+% Printed at the top of a course calendar--it also resets the ex, hw
+% and wk counters.
+\newcommand{\calendarHead}[2]{%
+  \setcounter{ex}{0}
+  \setcounter{hw}{0}
+  \setcounter{wk}{0}
+   \begin{flushleft}
+    \textbf{Class Calendar} \\
+    #1 #2
+  \end{flushleft}}
+
 \begin{document}
-\begin{flushleft}
-  \textbf{Fall 2023, Class Calendar}
-\end{flushleft}
+ \calendarHead{Fall}{2023}
 \begin{center}
  \begin{tabular}  {|l|l|l|l|l|}
 \hline
@@ -140,18 +156,13 @@
 \nweek{9.2}{Summation Notation}{}
 \mweek{9.2}{Summation Notation}{}
 \eweek{1.1--9.2}{\review}{}
-\nweek{}{}{\textbf{ \cellcolor{blue!15} Final Exam} } \hline
+\nweek{}{\finalExam{Wednesday 12 Dec 8:00 \AM--10:00 \AM}}{\textbf{ \cellcolor{blue!15} Final Exam} } \hline
 \end{tabular}
 \end{center}
 \vfill
 \newpage
 \SetDate[26/08/2024] %see https://nebraska.edu/academic-calendar
-\setcounter{ex}{0}
-\setcounter{hw}{0}
-\setcounter{wk}{0}
-\begin{flushleft}
-  \textbf{Fall 2024, Class Calendar}
-\end{flushleft}
+\calendarHead{Fall}{2024}
 \begin{center}
   \begin{tabular}  {|l|l|l|l|l|}
  \hline
