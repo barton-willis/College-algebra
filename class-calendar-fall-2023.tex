@@ -6,9 +6,9 @@
 \usepackage[nodayofweek,level]{datetime}
 \usepackage{calc}
 \usepackage[dvipsnames]{xcolor}
-
 \usepackage{ifthen}
 
+% macros for a.m. and p.m.
 \newcommand\AM{a.m.} %https://www.unk.edu/ccr/news-internal-communication/writing-style-guide.php
 \newcommand\PM{p.m.}
 % no page numbers
@@ -58,6 +58,7 @@
 \newcommand{\mweek}[3]{ &  & #1 & #2 & #3 \AdvanceDate[2]  \\}
 \newcommand{\eweek}[3]{ &  & #1 & #2 & #3 \AdvanceDate[3] \\ \hline}
 
+% Print the heading for the course calendar heading
 \newcommand{\tablehead}[5]
 {\textbf{\cellcolor{blue!25}{#1}}  & 
  \textbf{\cellcolor{blue!25}{#2}} & 
@@ -65,8 +66,6 @@
  \textbf{\cellcolor{blue!25}{#4}} & 
  \textbf{\cellcolor{blue!25}{#5}} \\ \hline \hline}
   
-
-
 % Set this to a message for a review day
 \newcommand{\review}{Exam review or catch up}
 
@@ -76,7 +75,7 @@
 % Message about final exam--the argument is the class time down to
 % half hour; so 8:05 --> 800; 9:10 --> 900, and etc.
 \newcommand{\finalExamMWF}[1]{\textbf{Final Exam} \finalMWF{#1}}
-
+\newcommand{\finalExamTTh}[1]{\textbf{Final Exam} \finalTTh{#1}}
 % Printed at the top of a course calendar--it also resets the ex, hw
 % and wk counters.
 \newcommand{\calendarHead}[2]{%
