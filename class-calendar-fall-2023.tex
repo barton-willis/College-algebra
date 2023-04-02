@@ -36,11 +36,15 @@
 \newcommand{\holiday}[1]{\textbf{No class} (#1)}
 
 % see https://www.unk.edu/ccr/marketing-advertising/branding-and-identity-marks/typefaces.php
-\usepackage[T1]{fontenc} 
-\usepackage{utopia}
+% see also https://tug.org/FontCatalogue/utopia-fouriermath/
+\usepackage{fourier}
+\usepackage[T1]{fontenc}
+
 
 % see https://tex.stackexchange.com/questions/325133/advdate-in-tables-does-not-advance-date-correctly
 % see also  https://pastebin.com/raw/7pVPQweM
+% see https://tex.stackexchange.com/questions/236193/equivalent-of-newdateformat-in-datetime2
+% apparently datetime has been replaced....
 \usepackage{datetime,advdate}
 \newdateformat{mydate}{\THEDAY\ \shortmonthname[\THEMONTH]}
 \makeatletter
@@ -119,6 +123,7 @@
  % Set to first day of the term--correct for fall 2023
 \SetDate[21/08/2023] 
  \calendarHead{Fall}{2023}
+
  \begin{center}
  \begin{tabular}  {|l|l|l|l|l|}
 \hline
