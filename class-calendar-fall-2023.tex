@@ -1,12 +1,17 @@
-\documentclass[11pt]{article}
+\documentclass[11pt]{article} % 12 point doesn't fit on one page
 \usepackage[paperwidth=8.5in,paperheight=11in,margin=0.45in]{geometry} 
 \usepackage[USenglish]{babel}
 \usepackage{colortbl}
 \usepackage[final]{microtype}
-\usepackage[nodayofweek,level]{datetime}
+\usepackage[nodayofweek,level]{datetime} %obsolete--datetime2 is the replacement
 \usepackage{calc}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{ifthen}
+
+% Use \darkerColor for column headings and \lighterColor for 
+% highlighted text
+\newcommand{\darkerColor}{blue!25}
+\newcommand{\lighterColor}{blue!15}
 
 % macros for a.m. and p.m.
 \newcommand\AM{a.m.} %https://www.unk.edu/ccr/news-internal-communication/writing-style-guide.php
@@ -24,7 +29,7 @@
 \newcounter{ex}\setcounter{ex}{0}
 \newcommand{\ex}{%\
 \setcounter{ex}{\value{ex}+1}
-\textbf{ \cellcolor{blue!15} Exam \theex}}
+\textbf{ \cellcolor{\lighterColor} Exam \theex}}
 
 % Counter for weeks
 \newcounter{wk}\setcounter{wk}{0}
@@ -40,12 +45,11 @@
 \usepackage{fourier}
 \usepackage[T1]{fontenc}
 
-
 % see https://tex.stackexchange.com/questions/325133/advdate-in-tables-does-not-advance-date-correctly
 % see also  https://pastebin.com/raw/7pVPQweM
 % see https://tex.stackexchange.com/questions/236193/equivalent-of-newdateformat-in-datetime2
 % apparently datetime has been replaced....
-\usepackage{datetime,advdate}
+\usepackage{advdate}
 \newdateformat{mydate}{\THEDAY\ \shortmonthname[\THEMONTH]}
 \makeatletter
 \renewcommand\AdvanceDate[1][\@ne]{%
@@ -63,12 +67,14 @@
 \newcommand{\eweek}[3]{ &  & #1 & #2 & #3 \AdvanceDate[3] \\ \hline}
 
 % Print the heading for the course calendar heading
+
+
 \newcommand{\tablehead}[5]
-{\textbf{\cellcolor{blue!25}{#1}}  & 
- \textbf{\cellcolor{blue!25}{#2}} & 
- \textbf{\cellcolor{blue!25}{#3}} & 
- \textbf{\cellcolor{blue!25}{#4}} & 
- \textbf{\cellcolor{blue!25}{#5}} \\ \hline \hline}
+{\textbf{\cellcolor{\darkerColor}{#1}}  & 
+ \textbf{\cellcolor{\darkerColor}{#2}} & 
+ \textbf{\cellcolor{\darkerColor}{#3}} & 
+ \textbf{\cellcolor{\darkerColor}{#4}} & 
+ \textbf{\cellcolor{\darkerColor}{#5}} \\ \hline \hline}
   
 % Set this to a message for a review day
 \newcommand{\review}{Exam review or catch up}
@@ -89,34 +95,37 @@
   \setcounter{ex}{0}
   \setcounter{hw}{0}
   \setcounter{wk}{0}
+  \large
    \begin{flushleft}
     \textbf{Class Calendar} \\
     #1 #2
-  \end{flushleft}}
+  \end{flushleft}
+  \normalsize}
 
 % Final exam day for MWF classes--round class time down to
-% half hour
+% half hour. I think the em-dash is correct; see
+% https://tex.stackexchange.com/questions/3819/dashes-vs-vs 
   \newcommand{\finalMWF}[1]
   {
-    \ifthenelse{\equal{#1}{800}}{Monday 8:00 \AM--10:00 \AM}{}
-    \ifthenelse{\equal{#1}{900}}{Wednesday 8:00 \AM--10:00 \AM}{}
-    \ifthenelse{\equal{#1}{1000}}{Monday 10:30 \AM--12:30 \PM}{}
-    \ifthenelse{\equal{#1}{1100}}{Wednesday 10:30 \AM--12:30 \PM}{}
-    \ifthenelse{\equal{#1}{1200}}{Monday 1:00 \PM--3:00 \PM}{}
-    \ifthenelse{\equal{#1}{100}}{Wednesday  1:00 \PM--3:00 \PM}{}
-    \ifthenelse{\equal{#1}{200}}{Monday 3:30 \PM--5:30 \PM}{}
-    \ifthenelse{\equal{#1}{300}}{Wednesday 3:30 \PM--5:30 \PM}{}
-    \ifthenelse{\equal{#1}{400}}{Tuesday 3:30 \PM--5:30 \PM}{}
+    \ifthenelse{\equal{#1}{800}}{Monday 8:00 \AM---10:00 \AM}{}
+    \ifthenelse{\equal{#1}{900}}{Wednesday 8:00 \AM---10:00 \AM}{}
+    \ifthenelse{\equal{#1}{1000}}{Monday 10:30 \AM---12:30 \PM}{}
+    \ifthenelse{\equal{#1}{1100}}{Wednesday 10:30 \AM---12:30 \PM}{}
+    \ifthenelse{\equal{#1}{1200}}{Monday 1:00 \PM---3:00 \PM}{}
+    \ifthenelse{\equal{#1}{100}}{Wednesday  1:00 \PM---3:00 \PM}{}
+    \ifthenelse{\equal{#1}{200}}{Monday 3:30 \PM---5:30 \PM}{}
+    \ifthenelse{\equal{#1}{300}}{Wednesday 3:30 \PM---5:30 \PM}{}
+    \ifthenelse{\equal{#1}{400}}{Tuesday 3:30 \PM---5:30 \PM}{}
   }
 
   \newcommand{\finalTTh}[1]
   {
-    \ifthenelse{\equal{#1}{800}}{Tuesday 8:00 \AM--10:00 \AM}{}
-    \ifthenelse{\equal{#1}{930}}{Thursday 8:00 \AM--10:00 \AM}{}
-    \ifthenelse{\equal{#1}{1100}}{Tuesday 10:30 \AM--12:30 \PM}{}
-    \ifthenelse{\equal{#1}{1230}}{Thursday 10:30 \AM--12:30 \PM}{}
-    \ifthenelse{\equal{#1}{200}}{Tuesday 1:00 \PM--3:00 \PM}{}
-    \ifthenelse{\equal{#1}{330}}{Thursday 1:00 \PM--3:00 \PM}{}
+    \ifthenelse{\equal{#1}{800}}{Tuesday 8:00 \AM---10:00 \AM}{}
+    \ifthenelse{\equal{#1}{930}}{Thursday 8:00 \AM---10:00 \AM}{}
+    \ifthenelse{\equal{#1}{1100}}{Tuesday 10:30 \AM---12:30 \PM}{}
+    \ifthenelse{\equal{#1}{1230}}{Thursday 10:30 \AM---12:30 \PM}{}
+    \ifthenelse{\equal{#1}{200}}{Tuesday 1:00 \PM---3:00 \PM}{}
+    \ifthenelse{\equal{#1}{330}}{Thursday 1:00 \PM---3:00 \PM}{}
   }
 
 \begin{document}
@@ -142,7 +151,7 @@
  \eweek{2.1}{Linear Functions}{\hw}
  % Week 4
 \nweek{2.2}{Absolute Value Functions}{}
-\mweek{1.1--2.2}{\review}{}
+\mweek{1.1---2.2}{\review}{}
 \eweek{}{\examday}{\ex}
 % Week 5
  \nweek{2.3}{Quadratic Functions}{}
@@ -158,7 +167,7 @@
 \eweek{4.3}{Rational Inequalities and Applications}{\hw}
   % Week 8
 \nweek{4.3}{Rational Inequalities and Applications}{}
-\mweek{2.3--4.3}{\review}{}
+\mweek{2.3---4.3}{\review}{}
 \eweek{}{\examday}{\ex}
 % Week 9
 \nweek{}{\holiday{Fall Break}}{}   
@@ -173,7 +182,7 @@
  \mweek{6.3}{Exponential Equations and Inequalities}{}
   \eweek{6.4}{Logarithmic Equations and Inequalities}{\hw}
   % Week 12
-  \nweek{5.1--6.4}{\review}{}
+  \nweek{5.1---6.4}{\review}{}
   \mweek{}{\examday}{\ex}
  \eweek{6.5}{Applications of Exponential and Logarithmic Functions}{}
  % Week 13
@@ -186,12 +195,12 @@
   \eweek{}{\holiday{Thanksgiving}}{}
   % Week 15
 \nweek{9.1}{Sequences}{}
-\mweek{6.5--9.1}{\review}{}
+\mweek{6.5---9.1}{\review}{}
  \eweek{}{\examday}{\ex}
  % Week 16
 \nweek{9.2}{Summation Notation}{}
 \mweek{9.2}{Summation Notation}{}
-\eweek{1.1--9.2}{\finalreview}{}
+\eweek{1.1---9.2}{\finalreview}{}
 \nweek{}{\finalExamMWF{800}}{\textbf{ \cellcolor{blue!15} Final Exam} } \hline
 \end{tabular}
 \end{center}
