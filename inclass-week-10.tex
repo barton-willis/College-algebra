@@ -1,0 +1,156 @@
+\documentclass[12pt,fleqn]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{epsfig}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage{pdfpages}
+\usepackage[final]{microtype}
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+%\usepackage{eucal}
+
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\degree}{\mathrm{degree}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\newcommand{\dist}{\, \mathrm{dist}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{tikz}
+\usepackage{amsmath}
+\usetikzlibrary{arrows}
+\usepackage{xcolor}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.95,0.95,0.95}
+
+\usepackage{graphicx}
+\newcommand\AM{{\sc am}}
+\newcommand\PM{{\sc pm}}
+     
+%\usepackage{twemojis}
+\newcommand{\quiz}{10}
+\newcommand{\term}{Spring}
+\newcommand{\due}{9:55 \AM}
+\newcommand{\class}{MATH 102}
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{\textbf{\class, \term \/ \the\year}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work \quiz}}
+\textbf{Row and Seat}:\hrulefill\\
+%\vspace{0.1in}
+
+\begin{quote}
+  \emph{
+    “I like maxims that don't encourage behavior modification.”
+    \hfill \sc{Bill Watterson}}
+\end{quote}
+\noindent  In class work  \quiz\/  has questions 1 through  \numquestions \/ with a total of  \numpoints\/  points.   
+ This assignment is due at the end of the class period (\due).
+This assignment is printed on \textbf{both} sides of the paper.
+\vspace{0.1in}
+
+
+\begin{questions} 
+
+\question Given that $f(x) = 2 x + 3$ and $g(x) = 1-x$, find the 
+\emph{numerical value} of each of the following
+
+\begin{parts}
+\part [2] $f \circ g (4)$
+\begin{solution}[1.25in]
+
+\end{solution}
+
+\part [2] $g \circ f (4)$
+\begin{solution}[1.25in]
+
+\end{solution}
+
+\part [2] $g \circ g (0)$
+\begin{solution}[1.25in]
+
+\end{solution}
+
+
+\end{parts}
+
+
+\question [2] Given that $f(x) = 2 x + 3$ and $g(x) = 1-x$, find 
+a formula for $f \circ g$.
+
+\begin{solution}
+
+\end{solution}
+\hfill
+\newpage 
+
+\question A table of values for functions $f$ and $g$ are
+
+\begin{tabular}[h]{|c|c|} 
+  \hline
+  $x$  & $f(x)$ \\ \hline \hline
+  0    & 3 \\ \hline
+  1    & 2 \\ \hline
+  2    & 1 \\ \hline
+  3    & 0 \\ \hline
+\end{tabular} \phantom{xxxxxxx}
+\begin{tabular}[h]{|c|c|} 
+  \hline
+  $x$  & $g(x)$ \\ \hline \hline
+  0    & 1 \\ \hline
+  1    & 3 \\ \hline
+  2    & 2 \\ \hline
+  3    & 0 \\ \hline
+\end{tabular} 
+
+Find the \emph{numerical values} of 
+\begin{parts}
+ \part[2] $ f \circ g (1)$
+ \begin{solution}[1.25in]
+
+ \end{solution}
+
+ \part[2] $ g \circ f (1)$
+ \begin{solution}[1.25in]
+
+ \end{solution}
+
+ \part[2] Using only the values from the table, find the solution
+ to the equation \mbox{$g \circ g (x) = 2$.}
+
+\end{parts}
+
+\end{questions}
+\end{document}
