@@ -1,0 +1,142 @@
+\documentclass[12pt,fleqn]{exam}
+\usepackage{pifont}
+\usepackage{dingbat}
+\usepackage{amsmath,amssymb}
+\usepackage{epsfig}
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[letterpaper, margin=0.75in]{geometry}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\addpoints
+\boxedpoints
+\pointsinmargin
+\pointname{pts}
+
+\usepackage{pdfpages}
+\usepackage[final]{microtype}
+\usepackage[american]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+%\usepackage{eucal}
+
+\usepackage{isomath}
+\usepackage{upgreek,amsmath}
+\usepackage{amssymb}
+
+\newcommand{\dotprod}{\, {\scriptzcriptztyle
+    \stackrel{\bullet}{{}}}\,}
+
+\newcommand{\reals}{\mathbf{R}}
+\newcommand{\lub}{\mathrm{lub}} 
+\newcommand{\glb}{\mathrm{glb}} 
+\newcommand{\complex}{\mathbf{C}}
+\newcommand{\dom}{\mbox{dom}}
+\newcommand{\range}{\mbox{range}}
+\newcommand{\cover}{{\mathcal C}}
+\newcommand{\integers}{\mathbf{Z}}
+\newcommand{\degree}{\mathrm{degree}}
+\newcommand{\vi}{\, \mathbf{i}}
+\newcommand{\vj}{\, \mathbf{j}}
+\newcommand{\vk}{\, \mathbf{k}}
+\newcommand{\bi}{\, \mathbf{i}}
+\newcommand{\bj}{\, \mathbf{j}}
+\newcommand{\bk}{\, \mathbf{k}}
+\newcommand{\dist}{\, \mathrm{dist}}
+\DeclareMathOperator{\Arg}{\mathrm{Arg}}
+\DeclareMathOperator{\Ln}{\mathrm{Ln}}
+\newcommand{\imag}{\, \mathrm{i}}
+
+\usepackage{tikz}
+\usepackage{amsmath}
+\usetikzlibrary{arrows}
+\usepackage{xcolor}
+\shadedsolutions
+\definecolor{SolutionColor}{rgb}{0.95,0.95,0.95}
+
+\usepackage{graphicx}
+\newcommand\AM{{\sc am}}
+\newcommand\PM{{\sc pm}}
+     
+%\usepackage{twemojis}
+\newcommand{\quiz}{11}
+\newcommand{\term}{Spring}
+\newcommand{\due}{9:55 \AM}
+\newcommand{\class}{MATH 102}
+\begin{document}
+\large
+\vspace{0.1in}
+\noindent\makebox[3.0truein][l]{\textbf{\class, \term \/ \the\year}}
+\textbf{Name:} \hrulefill \\
+\noindent \makebox[3.0truein][l]{\textbf{In class work \quiz}}
+\textbf{Row and Seat}:\hrulefill\\
+%\vspace{0.1in}
+
+\begin{quote}
+  \emph{
+    “Study hard what interests you the most in the most undisciplined, irreverent and original manner possible.” 
+    \hfill \sc{Richard Feynmann}}
+\end{quote}
+\noindent  In class work  \quiz\/  has questions 1 through  \numquestions \/ with a total of  \numpoints\/  points.   
+ This assignment is due at the end of the class period (\due).
+This assignment is printed on \textbf{both} sides of the paper.
+\vspace{0.1in}
+
+
+\begin{questions} 
+
+\question [2] Given that $E$ is an exponential function and that $E(0)=9$
+and $E(2) = 11$, find a formula for $E$.
+
+\begin{solution}[2.5in]
+
+\end{solution}
+
+\question [2] Given that $H$ is an exponential function with
+initial value of $8$ and that
+\begin{equation*}
+   \frac{H(4)}{H(3)} = \frac{2}{3},
+\end{equation*}
+find a formula for $H$.
+\begin{solution}%[2.5in]
+
+\end{solution}
+\vfill
+\newpage
+
+\question [2]  At 6 \AM,\, Louisa has 340 mg of caffeine circulating 
+in her blood. After $T$ hours, the amount of caffeine $C$ in her blood is
+\(
+     C = 340  \times  0.9^T
+\).
+When Louisa goes to bed at 10 \PM,\, how much caffeine is
+still in circulation?
+\begin{solution}[1.5in]
+
+\end{solution}
+
+\question Intense physical exercise can temporarily raise the amount
+of creatine in the blood above its normal level.\footnote{I suggest
+that you \emph{not} take medical advice from a mathematician, but
+if you are scheduled for a kidney function test, skipping rope
+for 60 minutes followed by 20 minutes of burpees the day 
+before might lead to worry and additional medical tests.} After intense exercise,
+ Martin's blood creatine level $C$ is 
+\begin{equation*}
+    C = 0.9 + 0.2 \times \left(\frac{1}{2} \right)^{T/4},
+\end{equation*}
+where $T$ is the number of hours after exercise. 
+\begin{parts}
+\part[2] Make a table of Martin's creatine levels after 2,4,8, and 16 hours.
+\begin{solution}[2.5in]
+
+\end{solution}
+
+\part [2] Many many hours after intense exercise, what is 
+Martin's blood creatine level?  Specifically, what is the horizontal
+asymptote toward infinity to the equation \(C = 0.9 + 0.2 
+   \times \left(\frac{1}{2} \right)^{T/4}\)?
+
+\end{parts}
+
+\end{questions}
+\end{document}
