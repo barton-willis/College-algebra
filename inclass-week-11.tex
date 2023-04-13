@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
@@ -87,9 +87,21 @@ This assignment is printed on \textbf{both} sides of the paper.
 \question [2] Given that $E$ is an exponential function and that $E(0)=9$
 and $E(2) = 11$, find a formula for $E$.
 
-\begin{solution}[2.5in]
+\begin{solution}[2.5in] The formula for $E$ has the form $E(x) = C a^x$,
+    where $C$ is the initial value and $a$ is the growth rate. The 
+    initial value $C$ is $E(0)$, so $C = 9.$ We have to work a bit 
+    harder to find the growth rate. We have
+    \begin{equation*}
+        \frac{11}{9} = \frac{E(2)}{E(0)} = \frac{C a^2}{C a^0} = a^2.
+    \end{equation*}
+    Solving this for $a$ gives $a = \pm \frac{\sqrt{11}}{3}$. But 
+    the growth rate is always a positive number, so 
+    $a = \frac{\sqrt{11}}{3}$. Gathering all this up, we have
+    \begin{equation*}
+        E(x) = 9 \left(  \frac{\sqrt{11}}{3} \right)^x.
+    \end{equation*}
 
-\end{solution}
+  \end{solution}
 
 \question [2] Given that $H$ is an exponential function with
 initial value of $8$ and that
@@ -97,7 +109,14 @@ initial value of $8$ and that
    \frac{H(4)}{H(3)} = \frac{2}{3},
 \end{equation*}
 find a formula for $H$.
-\begin{solution}%[2.5in]
+\begin{solution}%[2.5in] 
+    For any exponential function $H$, the growth rate is the quotient
+    $\frac{H(x+1)}{H(x)}$. Specializing this to $x=3$, we see that the
+    growth rate is $\frac{2}{3}$. Since the initial value is $8$, we
+    have
+    \begin{equation*}
+        H(x) = 8 \times \left(\frac{2}{3} \right)^x.
+    \end{equation*}
 
 \end{solution}
 \vfill
@@ -110,7 +129,10 @@ in her blood. After $T$ hours, the amount of caffeine $C$ in her blood is
 \).
 When Louisa goes to bed at 10 \PM,\, how much caffeine is
 still in circulation?
-\begin{solution}[1.5in]
+\begin{solution}[1.5in] We have
+    \begin{equation*}
+        C = 340 \times 0.9^{16} = 63.0 \mbox{mg}.
+    \end{equation*}
 
 \end{solution}
 
@@ -128,7 +150,13 @@ where $T$ is the number of hours after exercise.
 \begin{parts}
 \part[2] Make a table of Martin's creatine levels after 2,4,8, and 16 hours.
 \begin{solution}[2.5in]
-
+    \begin{tabular}{|c|c|} \hline
+        T & Creatine \\ \hline \hline
+        2 & 1.04 \\
+        4 & 1.00 \\
+        8 & 0.95 \\
+        16 & 0.91 \\ \hline
+    \end{tabular}
 \end{solution}
 
 \part [2] Many many hours after intense exercise, what is 
@@ -137,6 +165,10 @@ asymptote toward infinity to the equation \(C = 0.9 + 0.2
    \times \left(\frac{1}{2} \right)^{T/4}\)?
 
 \end{parts}
+\begin{solution} For large $T$, the term $0.2 
+   \times \left(\frac{1}{2} \right)^{T/4}$ is close to zero. So
+   for very large $T$, we have $C \approx 0.9$.
 
+\end{solution}
 \end{questions}
 \end{document}
