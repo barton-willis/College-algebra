@@ -22,6 +22,7 @@
 \usepackage{isomath}
 \usepackage{upgreek,amsmath}
 \usepackage{amssymb}
+\usepackage{siunitx}
 
 \newcommand{\dotprod}{\, {\scriptzcriptztyle
     \stackrel{\bullet}{{}}}\,}
@@ -111,8 +112,9 @@ initial value of $8$ and that
 find a formula for $H$.
 \begin{solution}%[2.5in] 
     For any exponential function $H$, the growth rate is the quotient
-    $\frac{H(x+1)}{H(x)}$. Specializing this to $x=3$, we see that the
-    growth rate is $\frac{2}{3}$. Since the initial value is $8$, we
+    $\frac{H(x+1)}{H(x)}$, where $x$ is any real number. Specializing this 
+    to $x=3$, we see that the
+    growth rate is $\frac{H(3+1)}{H(3)} =  \frac{H(4)}{H(3)} = \frac{2}{3}$. Since the initial value is $8$, we
     have
     \begin{equation*}
         H(x) = 8 \times \left(\frac{2}{3} \right)^x.
@@ -131,9 +133,10 @@ When Louisa goes to bed at 10 \PM,\, how much caffeine is
 still in circulation?
 \begin{solution}[1.5in] We have
     \begin{equation*}
-        C = 340 \times 0.9^{16} = 63.0 \mbox{mg}.
+        C = 340 \times 0.9^{16} = \SI{63.0}{\milli\gram}.
     \end{equation*}
-
+I rounded the value to the nearest tenth---given the context, that
+is reasonable.
 \end{solution}
 
 \question Intense physical exercise can temporarily raise the amount
@@ -148,15 +151,28 @@ before might lead to worry and additional medical tests.} After intense exercise
 \end{equation*}
 where $T$ is the number of hours after exercise. 
 \begin{parts}
-\part[2] Make a table of Martin's creatine levels after 2,4,8, and 16 hours.
+\part[2] Make a table of Martin's creatine levels after 2, 4, 8, and 16 hours.
 \begin{solution}[2.5in]
+ 
+This problem is a calculator exercise---be sure you know how
+to use your own calculator to evaluate exponential functions. 
+
+\quad I rounded these values to the nearest hundredth---given that
+the problem involved medical data, that seemed
+reasonable. The problem statement didn't include the units on the 
+creatine---if you need to know, it's mg/dL, or milligrams per deciliter of blood.
+
+\vspace{0.1in}
     \begin{tabular}{|c|c|} \hline
-        T & Creatine \\ \hline \hline
-        2 & 1.04 \\
-        4 & 1.00 \\
-        8 & 0.95 \\
+        Time (hours) & Creatine (mg/dL) \\ \hline \hline
+        2 & 1.04 \\ \hline
+        4 & 1.00 \\ \hline
+        8 & 0.95 \\ \hline
         16 & 0.91 \\ \hline
     \end{tabular}
+
+
+
 \end{solution}
 
 \part [2] Many many hours after intense exercise, what is 
