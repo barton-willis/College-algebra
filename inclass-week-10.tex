@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
@@ -15,10 +15,9 @@
 \usepackage{pdfpages}
 \usepackage[final]{microtype}
 \usepackage[american]{babel}
+
 \usepackage[T1]{fontenc}
 \usepackage{fourier}
-%\usepackage{eucal}
-
 \usepackage{isomath}
 \usepackage{upgreek,amsmath}
 \usepackage{amssymb}
@@ -74,7 +73,7 @@
 \begin{quote}
   \emph{
     “I like maxims that don't encourage behavior modification.”
-    \hfill \sc{Bill Watterson}}
+     \sc{Bill Watterson}}
 \end{quote}
 \noindent  In class work  \quiz\/  has questions 1 through  \numquestions \/ with a total of  \numpoints\/  points.   
  This assignment is due at the end of the class period (\due).
@@ -89,18 +88,34 @@ This assignment is printed on \textbf{both} sides of the paper.
 
 \begin{parts}
 \part [2] $f \circ g (4)$
-\begin{solution}[1.25in]
+\begin{solution}[1.25in] We have
+  \begin{align*}
+      f \circ g(4) &= f(g(4)) & \mbox{(definition of composition)} \\
+                   &= f(-3)   & \mbox{(formula for $g$)} \\
+                   &= -6 + 3  & \mbox{(formula for $f$)} \\
+                   &= -3      & \mbox{(arithematic)}
+  \end{align*}
 
 \end{solution}
 
 \part [2] $g \circ f (4)$
 \begin{solution}[1.25in]
-
+  \begin{align*}
+    g \circ f(4) &= g(f(4)) & \mbox{(definition of composition)} \\
+                 &= g(11)   & \mbox{(formula for $f$)} \\
+                 &= 1-11     & \mbox{(formula for $g$)} \\
+                 &= -10     & \mbox{(arithematic)}
+\end{align*}
 \end{solution}
 
 \part [2] $g \circ g (0)$
 \begin{solution}[1.25in]
-
+  \begin{align*}
+    g \circ g(0) &= g(g(0)) & \mbox{(definition of composition)} \\
+                 &= g(1)   & \mbox{(formula for $g$)} \\
+                 &= 1-1    & \mbox{(formula for $g$)} \\
+                 &= 0     & \mbox{(arithematic)}
+\end{align*}
 \end{solution}
 
 
@@ -110,11 +125,17 @@ This assignment is printed on \textbf{both} sides of the paper.
 \question [2] Given that $f(x) = 2 x + 3$ and $g(x) = 1-x$, find 
 a formula for $f \circ g$.
 
-\begin{solution}
+\begin{solution} We have
+  \begin{align*}
+     f \circ g (x) &= f(g(x)) & \mbox{(definition of composition)} \\
+                   &= f(1-x)   & \mbox{(formula for $g$)} \\
+                   &= 2 (1-x) + 3 & \mbox{(formula for $f$)} \\
+                   &= -2x + 5 & \mbox{(simplification)} 
+  \end{align*}
 
 \end{solution}
-\hfill
-\newpage 
+%\hfill
+%\newpage 
 
 \question A table of values for functions $f$ and $g$ are
 
@@ -138,18 +159,35 @@ a formula for $f \circ g$.
 Find the \emph{numerical values} of 
 \begin{parts}
  \part[2] $ f \circ g (1)$
- \begin{solution}[1.25in]
+ \begin{solution}[1.25in] These values we just look up!
+  \begin{equation*}
+    f \circ g (1) = f(g(1)) = f(3) = 0.
+  \end{equation*}
 
  \end{solution}
 
  \part[2] $ g \circ f (1)$
  \begin{solution}[1.25in]
-
+  \begin{equation*}
+    g \circ f (1) = g(f(1)) = g(2) = 2.
+  \end{equation*}
  \end{solution}
 
  \part[2] Using only the values from the table, find the solution
  to the equation \mbox{$g \circ g (x) = 2$.}
 
+ \begin{solution}[1.25in]
+   We need to solve the equation $g(g(x)) = 2$. From the table, we see that
+   if $g(\mbox{blob}_1) = 2$, then $\mbox{blob}_1 =2$. But $\mbox{blob}_1 =g(x)$,
+   so again we need to solve $g(x) = 2$. And that makes $x=2$.
+
+   \textbf{Oops} This problem has too many twos--it's maybe a bit confusing. Let's
+   try $g(g(x))=3$. First, we replace $g(x)$ by $\mbox{blob}_1$. So we need to 
+   solve $g(\mbox{blob}_1) = 3$. Looking up the input that gives an output of 3,
+   we see that $\mbox{blob}_1 = 1$. But $\mbox{blob}_1 = g(x)$, so our new
+   problem is $g(x)=1$. Looking up the value that gives an output of 1, we see
+   that $x=0$.
+ \end{solution}
 \end{parts}
 
 \end{questions}
