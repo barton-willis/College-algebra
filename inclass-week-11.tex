@@ -1,4 +1,4 @@
-\documentclass[12pt,fleqn]{exam}
+\documentclass[12pt,fleqn,answers]{exam}
 \usepackage{pifont}
 \usepackage{dingbat}
 \usepackage{amsmath,amssymb}
@@ -22,6 +22,7 @@
 \usepackage{isomath}
 \usepackage{upgreek,amsmath}
 \usepackage{amssymb}
+\usepackage{siunitx}
 
 \newcommand{\dotprod}{\, {\scriptzcriptztyle
     \stackrel{\bullet}{{}}}\,}
@@ -100,7 +101,7 @@ and $E(2) = 11$, find a formula for $E$.
             
     \end{equation*}
 
-\end{solution}
+  \end{solution}
 
 \question [2] Given that $H$ is an exponential function with
 initial value of $8$ and that
@@ -108,7 +109,15 @@ initial value of $8$ and that
    \frac{H(4)}{H(3)} = \frac{2}{3},
 \end{equation*}
 find a formula for $H$.
-\begin{solution}%[2.5in]
+\begin{solution}%[2.5in] 
+    For any exponential function $H$, the growth rate is the quotient
+    $\frac{H(x+1)}{H(x)}$, where $x$ is any real number. Specializing this 
+    to $x=3$, we see that the
+    growth rate is $\frac{H(3+1)}{H(3)} =  \frac{H(4)}{H(3)} = \frac{2}{3}$. Since the initial value is $8$, we
+    have
+    \begin{equation*}
+        H(x) = 8 \times \left(\frac{2}{3} \right)^x.
+    \end{equation*}
 
 \end{solution}
 \vfill
@@ -121,8 +130,12 @@ in her blood. After $T$ hours, the amount of caffeine $C$ in her blood is
 \).
 When Louisa goes to bed at 10 \PM,\, how much caffeine is
 still in circulation?
-\begin{solution}[1.5in]
-
+\begin{solution}[1.5in] We have
+    \begin{equation*}
+        C = 340 \times 0.9^{16} = \SI{63.0}{\milli\gram}.
+    \end{equation*}
+I rounded the value to the nearest tenth---given the context, that
+is reasonable.
 \end{solution}
 
 \question Intense physical exercise can temporarily raise the amount
@@ -137,8 +150,27 @@ before might lead to worry and additional medical tests.} After intense exercise
 \end{equation*}
 where $T$ is the number of hours after exercise. 
 \begin{parts}
-\part[2] Make a table of Martin's creatine levels after 2,4,8, and 16 hours.
+\part[2] Make a table of Martin's creatine levels after 2, 4, 8, and 16 hours.
 \begin{solution}[2.5in]
+ 
+This problem is a calculator exercise---be sure you know how
+to use your own calculator to evaluate exponential functions. 
+
+\quad I rounded these values to the nearest hundredth---given that
+the problem involved medical data, that seemed
+reasonable. The problem statement didn't include the units on the 
+creatine---if you need to know, it's mg/dL, or milligrams per deciliter of blood.
+
+\vspace{0.1in}
+    \begin{tabular}{|c|c|} \hline
+        Time (hours) & Creatine (mg/dL) \\ \hline \hline
+        2 & 1.04 \\ \hline
+        4 & 1.00 \\ \hline
+        8 & 0.95 \\ \hline
+        16 & 0.91 \\ \hline
+    \end{tabular}
+
+
 
 \end{solution}
 
@@ -148,6 +180,10 @@ asymptote toward infinity to the equation \(C = 0.9 + 0.2
    \times \left(\frac{1}{2} \right)^{T/4}\)?
 
 \end{parts}
+\begin{solution} For large $T$, the term $0.2 
+   \times \left(\frac{1}{2} \right)^{T/4}$ is close to zero. So
+   for very large $T$, we have $C \approx 0.9$.
 
+\end{solution}
 \end{questions}
 \end{document}
