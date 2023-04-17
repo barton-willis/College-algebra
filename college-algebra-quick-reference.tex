@@ -269,34 +269,42 @@ For \(a,b > 0\) and \(m,n\) real:
 \end{minipage}
 \section*{Solution of Equations}
 %\vspace{-0.2in}
+
 \subsubsection*{Algebraic}
 %\vspace{-0.2in}
+Suppose $X, Y, P$, and $Q$ possibly  depend on the unknown $x$; and
+suppose $a,b$, and $c$ do not depend on the unknown. 
 \begin{minipage}[c]{0.3333333333333\textwidth}
 \begin{align*}
-& \big [a b = 0 \big ] \equiv \big [ a = 0 \mbox{ \textbf{or} } b = 0 \big ]\\
-& \big [ a^2 = b^2 \big ] \equiv \big [ a = b \mbox{ \textbf{or} } a = -b \big ]\\
-&\left [ \frac{a}{b} = 0 \right ] \equiv \big [ a = 0 \mbox{ \textbf{and} } b \neq 0 \big ] \\
-&\left [\frac{a}{b} = \frac{c}{d}  \right ] \equiv \big [ad  = bc \mbox{ \textbf{and}  } b \neq 0  \mbox{ \textbf{and}  }  d \neq 0 \big ] \\
-&\big [|a| = |b|  \big ] \equiv \big [a =b \mbox{ \textbf{or} } a = -b \big ]\\
-&\big [ \sqrt{a}  = b \big ] \equiv \big [a = b^2 \mbox{ \textbf{and}  } b \ge 0 \big ] \\
+& \big [X Y = 0 \big ] \equiv \big [ X = 0 \mbox{ \textbf{or} } Y = 0 \big ]\\
+& \big [ X^2 = Y^2 \big ] \equiv \big [ X = Y \mbox{ \textbf{or} } X = -Y \big ]\\
+&\left [ \frac{X}{Y} = 0 \right ] \equiv \big [ X = 0 \mbox{ \textbf{and} } Y \neq 0 \big ] \\
+&\left [\frac{X}{Y} = \frac{P}{Q}  \right ] \equiv \big [X Q = Y P  \mbox{ \textbf{and}  } Y \neq 0  \mbox{ \textbf{and}  }  Q \neq 0 \big ] \\
+&\big [|X| = |Y|  \big ] \equiv \big [X = Y \mbox{ \textbf{or} } X = -Y \big ]\\
+&\big [ \sqrt{X}  = Y \big ] \equiv \big [X = Y^2 \mbox{ \textbf{and}  } Y \ge 0 \big ] \\
 \intertext{For \(a \neq 0\),}
 & \big [a x^2 + b x + c = 0 \big] \equiv \left [x = \frac{-b \pm \sqrt{b^2 - 4 a c}}{2 a} \right] \\
 \end{align*}
+\end{minipage}
+\begin{minipage}[c]{0.3333333333333\textwidth}
 %\vspace{-0.52in}
-\subsubsection*{Exponential}
+\subsubsection*{Logarithmic and Exponential}
 %\vspace{-0.2in}
 \begin{align*}
-& \big [\ln(a) = 0 \big] \equiv \big [a =  1\big] \\
-& \big [\euler^a = 1 \big] \equiv \big [a = 0 \big] \\
-& \big [\ln(a) = b \big] \equiv \big [a = \euler^b \big] \\
+& \big [\ln(X) = 0 \big] \equiv \big [X =  1\big] \\
+& \big [\euler^X = 1 \big] \equiv \big [X = 0 \big] \\
+& \big [\log_a(X) = b \big] \equiv \big [X = a^b \big] \\
+& \big [a^X = a^Y \big] \equiv \big [X = Y \big] \\
+& \big [\log_a(X) = \log_a(Y) \big] \equiv \big [X = Y \big] 
 \end{align*}
 \end{minipage}
 \section*{Logarithms}
-   \begin{equation*}
-  \log_a(x) = \frac{\ln(x)}{\ln(a)}
-     \end{equation*}
-\vfill
-
+For $x > 0 $ and $y > 0$
+   \begin{align*}
+&\log_a(x) = \frac{\ln(x)}{\ln(a)}\\
+&\log_a(y) + \log_a(y) = \log_a(x y) \\
+&\log(x^z) = z \log(x)
+     \end{align*}
 \section*{Graph Translations}
 \begin{minipage}[c]{0.3333333333333\textwidth}
 For the graph of $F(x,y) = 0$  
@@ -321,7 +329,7 @@ Expanded the equation is
 \[
    x^2 - 2h x + y^2 - 2 k y = r^2 - h^2 - k^2. 
 \]
-\end{minipage}[c]
+\end{minipage}
 
 \section*{Parabolas \& Lines}
 \begin{minipage}[c]{0.3333333333333\textwidth}
@@ -360,21 +368,19 @@ The number \(\frac{y_2-y_1}{x_2-x_1} \) is the slope.
 \mathrm{ceiling}              &  (-\infty, \infty)  &  \integers   & (-1,0] \\ \hline
 \end{tabular}
 
-
-
 \section*{Compound Interest}
 \begin{minipage}[c]{0.3333333333333\textwidth}
 Interest rate $r$ compounded $n$ times
 per year
-\[  A = P (1 + r/n)^{n t}
-    \]
+\begin{equation*}
+     A = P (1 + r/n)^{n t}
+\end{equation*}
 Continuous compounding:
-\[
+\begin{equation*}
     A = P \euler^{r t}
-\]
+\end{equation*}
 %\vspace{0.2in}
 \end{minipage}
-
 \section*{Exponential Growth}
 The exponential function that contains
 the points \((t=t_o, y=y_o)\) and \((t=t_1, y=y_1)\)
@@ -383,9 +389,22 @@ is
     y = y_o \parens*{\frac{y_1}{y_o}}^{\frac{t-t_o}{t_1-t_o}}.
 \end{equation*}
 
+% See https://www.stat.rice.edu/~dobelman/notes_papers/math/Cheatsheet.Maths.pdf
+% I like the common errors
 
- 
-%\vfill 
+\section*{Common Errors}
+\begin{tabular}{|L | L|} \hline
+\mbox{\textbf{Error}} & \mbox{\textbf{Correct or Example}}  \\ \hline
+\nicefrac{x}{0}=0 \mbox{ or } x  & \nicefrac{x}{0} \mbox{ is undefined} \\
+-x^2 = x^2       & -x^2 = -(x^2) \\ 
+\nicefrac{a}{(b+c)} = \nicefrac{a}{b} + \nicefrac{a}{c} &  \nicefrac{1}{(1+1)} \neq \nicefrac{1}{1} + \nicefrac{1}{1}\\ 
+\nicefrac{a+b x}{a} = 1+ b x  & \nicefrac{a+b x}{a} = 1+\nicefrac{b x}{a} \\
+\parens*{a+b}^2 = a^2 + b^2 & \parens*{a+b}^2 = a^2+2 a b + b^2 \\
+\sqrt{a+b} = \sqrt{a} + \sqrt{b} &  \sqrt{1+1} \neq \sqrt{1} + \sqrt{1}\\  \hline
+
+  \end{tabular}
+
+
 \section*{Graphs}
 Graph of natural logarithm
 %\vspace{0.1in}
@@ -418,23 +437,10 @@ Graph of natural logarithm
     \end{tikzpicture}
   %  \caption{Graph of $y = \ln(x)$}
 
-% See https://www.stat.rice.edu/~dobelman/notes_papers/math/Cheatsheet.Maths.pdf
-% I like the common errors
 
-\section*{Common Errors}
-\begin{tabular}{|L | L|} \hline
-\mbox{\textbf{Error}} & \mbox{\textbf{Correct or Example}}  \\ \hline
-\nicefrac{x}{0}=0 \mbox{ or } x  & \nicefrac{x}{0} \mbox{ is undefined} \\
--x^2 = x^2       & -x^2 = -(x^2) \\ 
-\nicefrac{a}{(b+c)} = \nicefrac{a}{b} + \nicefrac{a}{c} &  \nicefrac{1}{(1+1)} \neq \nicefrac{1}{1} + \nicefrac{1}{1}\\ 
-\nicefrac{a+b x}{a} = 1+ b x  & \nicefrac{a+b x}{a} = 1+\nicefrac{b x}{a} \\
-\parens*{a+b}^2 = a^2 + b^2 & \parens*{a+b}^2 = a^2+2 a b + b^2 \\
-\sqrt{a+b} = \sqrt{a} + \sqrt{b} &  \sqrt{1+1} \neq \sqrt{1} + \sqrt{1}\\  \hline
-
-  \end{tabular}
 
 \vfill
-\noindent {\textbf{Revised} \today by Barton Willis. This work is
+\noindent {\textbf{Revised} \today \,\, by Barton Willis. This work is
 licensed under Attribution 4.0 International (CC BY 4.0) \,  \qrcode[height=0.15in]{https://creativecommons.org/licenses/by/4.0/}. For the current version of
 this document, visit \, \qrcode[height=0.15in]{https://github.com/barton-willis/College-algebra}}
 \end{multicols*}%{3}
