@@ -88,9 +88,16 @@ This assignment is printed on \textbf{both} sides of the paper.
 \question [2] Given that $E$ is an exponential function and that $E(0)=9$
 and $E(2) = 11$, find a formula for $E$.
 
+<<<<<<< Updated upstream
 \begin{solution}[2.5in]  The formula for every exponential function $E$ has the 
     form $E(x) = C a^x$, where $C$ is the initial value and $a$ is the growth rate.
     The fact  $E(0)=9$ tells us that
+=======
+\begin{solution}[2.5in] The formula for $E$ has the form $E(x) = C a^x$,
+    where $C$ is the initial value and $a$ is the growth rate. The 
+    initial value is $E(0)$, so $C = 9.$ We have to work a bit 
+    harder to find the growth rate. We have
+>>>>>>> Stashed changes
     \begin{equation*}
         \left[  C a^0 = 9 \right] = \left[  C  = 9 \right]
     \end{equation*}
@@ -100,6 +107,11 @@ and $E(2) = 11$, find a formula for $E$.
             \mbox{(substitute for $C$)} \\
             
     \end{equation*}
+    The parenthesis surrounding $\frac{\sqrt{11}}{3}$ in 
+    $9 \left(  \frac{\sqrt{11}}{3} \right)^x$ makes it
+    clear that the entire fraction is raised to the power $x$.
+    Without the parenthesis, the meaning of the expression is
+    unclear.
 
   \end{solution}
 
@@ -120,8 +132,8 @@ find a formula for $H$.
     \end{equation*}
 
 \end{solution}
-\vfill
-\newpage
+%\vfill
+%\newpage
 
 \question [2]  At 6 \AM,\, Louisa has 340 mg of caffeine circulating 
 in her blood. After $T$ hours, the amount of caffeine $C$ in her blood is
@@ -139,43 +151,41 @@ is reasonable.
 \end{solution}
 
 \question Intense physical exercise can temporarily raise the amount
-of creatine in the blood above its normal level.\footnote{I suggest
+of creatinine in the blood above its normal level.\footnote{I suggest
 that you \emph{not} take medical advice from a mathematician, but
 if you are scheduled for a kidney function test, skipping rope
 for 60 minutes followed by 20 minutes of burpees the day 
 before might lead to worry and additional medical tests.} After intense exercise,
- Martin's blood creatine level $C$ is 
+ Martin's blood creatinine level $C$ is 
 \begin{equation*}
     C = 0.9 + 0.2 \times \left(\frac{1}{2} \right)^{T/4},
 \end{equation*}
 where $T$ is the number of hours after exercise. 
 \begin{parts}
 \part[2] Make a table of Martin's creatine levels after 2, 4, 8, and 16 hours.
-\begin{solution}[2.5in]
- 
-This problem is a calculator exercise---be sure you know how
+\begin{solution}[2.5in] This problem is a calculator exercise---be sure you know how
 to use your own calculator to evaluate exponential functions. 
 
-\quad I rounded these values to the nearest hundredth---given that
-the problem involved medical data, that seemed
-reasonable. The problem statement didn't include the units on the 
-creatine---if you need to know, it's mg/dL, or milligrams per deciliter of blood.
-
 \vspace{0.1in}
+\begin{centering}
     \begin{tabular}{|c|c|} \hline
-        Time (hours) & Creatine (mg/dL) \\ \hline \hline
+        Time (hours) &  Creatinine (mg/dL) \\ \hline \hline
         2 & 1.04 \\ \hline
         4 & 1.00 \\ \hline
         8 & 0.95 \\ \hline
         16 & 0.91 \\ \hline
     \end{tabular}
+\end{centering}
 
-
-
+    \quad I rounded these values to the nearest hundredth---given that
+    the problem involved medical data, that seemed
+    reasonable. The problem statement didn't include the units on the 
+    creatinine---if you need to know, it's mg/dL, or milligrams per deciliter of blood.
+    
 \end{solution}
 
 \part [2] Many many hours after intense exercise, what is 
-Martin's blood creatine level?  Specifically, what is the horizontal
+Martin's blood creatinine level?  Specifically, what is the horizontal
 asymptote toward infinity to the equation \(C = 0.9 + 0.2 
    \times \left(\frac{1}{2} \right)^{T/4}\)?
 
