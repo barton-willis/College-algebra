@@ -109,19 +109,20 @@ the population in the years 2000 and 2010 are given in the table
    \begin{equation*}
        P = 341 \times \left(\frac{305}{341} \right)^{T/10}.
    \end{equation*}
-   Converting this to the form $P = 341 \times \mathrm{e}^{-0.011157 \cdots \times T}$ \emph{isn't} required by the problem statement; so LIB.  And converting this to the form P = 341 \times 0.98890\cdots^T$, \emph{isn't} required by the problem statement; so again LIB.
+   Converting this to the form $P = 341 \times \mathrm{e}^{-0.011157 \cdots \times T}$ \emph{isn't} required by the problem statement; so LIB.  And converting this to the form $P = 341 \times 0.98890\cdots^T$, \emph{isn't} required by the problem statement; so again LIB.
 \end{solution}
 
 \part [2] Using your exponential function from part `a,' when will the population of Long Pine be 280?
 
 \begin{solution}%[3.0in] 
-   We need to solve $280 = 341 \times \left(\frac{305}{341} \right)^{T/10}$ for $T$.
+   We need to solve $280 = 341 \times \left(\frac{305}{341} \right)^{T/10}$ for $T$. Some (many) students will be more comfortable
+   using decimal approximations to various quotients as they go. That's OK.
    \begin{align*}
    \left[280 = 341 \times \left(\frac{305}{341} \right)^{T/10} \right] &=
    \left[\frac{280}{341} = \left(\frac{305}{341} \right)^{T/10} \right] &\mbox{($\div$ 341)} \\
    &= \left[\log(\frac{280}{341}) = \log \left(\left(\frac{305}{341} \right)^{T/10} \right) \right] &\mbox{(log of left and right)} \\
    &= \left[\log \left (\frac{280}{341} \right) = \frac{T}{10} \log \left(\frac{305}{341}  \right) \right] &\mbox{(log property)} \\
-   &= \left[T = 10 \times \frac{\log \left (\frac{280}{341} \right)}{\log \left (\left(\frac{305}{341} \right) \right)} \right], &\mbox{(divide)} \\
+   &= \left[T = 10 \times \frac{\log \left (\frac{280}{341} \right)}{\log \left(\frac{305}{341} \right)} \right], &\mbox{(divide)} \\
    &= \left[T \approx 17.7 \mbox{years} \right]. 
    \end{align*}
 

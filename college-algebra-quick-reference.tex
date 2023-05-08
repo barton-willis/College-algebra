@@ -3,7 +3,6 @@
 %\usepackage[T1]{fontenc}
 
  \usepackage{pgfplots}
-
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{tikz}
@@ -18,7 +17,7 @@
 %\usepackage{tkz-euclide}
 %\usetkzobj{all}
 \pagestyle{empty}
-\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[final]{microtype}
 \usepackage[american]{babel}
 \usepackage{centernot}
 \usepackage{amstext} % for \text macro
@@ -370,16 +369,9 @@ The number \(\frac{y_2-y_1}{x_2-x_1} \) is the slope.
 
 \section*{Compound Interest}
 \begin{minipage}[c]{0.3333333333333\textwidth}
-Interest rate $r$ compounded $n$ times
-per year
-\begin{equation*}
-     A = P (1 + r/n)^{n t}
-\end{equation*}
-Continuous compounding:
-\begin{equation*}
-    A = P \euler^{r t}
-\end{equation*}
-%\vspace{0.2in}
+Current value $A$, principal $P$, APY $r$, time $t$, then
+\mbox{$
+     A = P (1 + r)^{t}$}
 \end{minipage}
 \section*{Exponential Growth}
 The exponential function that contains
@@ -403,6 +395,24 @@ is
 \sqrt{a+b} = \sqrt{a} + \sqrt{b} &  \sqrt{1+1} \neq \sqrt{1} + \sqrt{1}\\  \hline
 
   \end{tabular}
+
+  \section*{Summations}
+  \vspace{-0.249in}
+  \begin{minipage}[c]{0.3333333333333\textwidth}
+\begin{align*}
+  &\sum_{k=1}^n 1 = n \\
+  &\sum_{k=1}^n k = \frac{n(n+1)}{2} \\
+  &\sum_{k=1}^n z^k = \frac{{{z}^{n+1}}-z}{z-1}, z \neq 1
+ % &\sum_{k=1}^n (\alpha f_k + \beta g_k) = \alpha \sum_{k=1}^n f_k + \beta \sum_{k=1}^n g_k
+\end{align*}
+\end{minipage}
+\vspace{-0.149in}
+\section*{Sequences}
+
+A sequence is \emph{arithmetic} if $f_n = a n + b$;
+it is \emph{geometric} if $f_n = c a^n$
+where $a,b,c$ are real numbers.
+
 
 
 \section*{Graphs}
